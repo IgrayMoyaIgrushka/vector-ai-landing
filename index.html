@@ -1147,99 +1147,6 @@
       line-height: 1.7;
     }
 
-    /* CALCULATOR */
-    .calculator {
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(45, 42, 38, 0.7) 0%, rgba(26, 24, 20, 0.95) 100%);
-      border: 1px solid var(--border-light);
-      padding: 40px;
-      margin-top: 48px;
-      backdrop-filter: blur(10px);
-    }
-
-    .calculator-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: #f3f4f6;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .calculator-subtitle {
-      font-size: 15px;
-      color: var(--text-muted);
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .calc-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-
-    .calc-input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .calc-input-group label {
-      font-size: 14px;
-      font-weight: 600;
-      color: #f5f0eb;
-    }
-
-    .calc-input-group input,
-    .calc-input-group select {
-      padding: 14px 18px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-light);
-      background: rgba(45, 42, 38, 0.8);
-      color: #f5f0eb;
-      font-size: 15px;
-      font-family: inherit;
-      transition: var(--transition);
-    }
-
-    .calc-input-group input:focus,
-    .calc-input-group select:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
-    }
-
-    .calc-result {
-      background: linear-gradient(135deg, rgba(132, 169, 140, 0.12), rgba(212, 165, 116, 0.08));
-      border: 1px solid rgba(132, 169, 140, 0.25);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      text-align: center;
-    }
-
-    .calc-result-label {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .calc-result-value {
-      font-size: 42px;
-      font-weight: 800;
-      background: linear-gradient(135deg, #84a98c, #6f8f72);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
-
-    .calc-result-note {
-      font-size: 12px;
-      color: var(--text-muted-2);
-      margin-top: 12px;
-    }
-
     /* FORM */
     .form-section {
       border-radius: var(--radius-lg);
@@ -1661,7 +1568,6 @@
         grid-template-columns: 1fr;
       }
 
-      .calculator,
       .form-section,
       .contact {
         padding: 28px;
@@ -2105,50 +2011,6 @@
         </div>
       </section>
 
-      <!-- CALCULATOR -->
-      <section class="section" id="calculator">
-        <div class="calculator reveal">
-          <h3 class="calculator-title">💰 Калькулятор экономии</h3>
-          <p class="calculator-subtitle">Узнайте, сколько времени и денег вы можете сэкономить с автоматизацией</p>
-          
-          <div class="calc-grid">
-            <div class="calc-input-group">
-              <label for="employees">Количество сотрудников в отделе</label>
-              <input type="number" id="employees" value="5" min="1" max="100" onchange="calculateSavings()">
-            </div>
-            <div class="calc-input-group">
-              <label for="salary">Средняя зарплата сотрудника (₽/мес)</label>
-              <input type="number" id="salary" value="60000" min="10000" step="5000" onchange="calculateSavings()">
-            </div>
-            <div class="calc-input-group">
-              <label for="hours">Сколько часов в день тратится на рутину?</label>
-              <select id="hours" onchange="calculateSavings()">
-                <option value="1">1 час</option>
-                <option value="2">2 часа</option>
-                <option value="3" selected>3 часа</option>
-                <option value="4">4 часа</option>
-                <option value="5">5+ часов</option>
-              </select>
-            </div>
-            <div class="calc-input-group">
-              <label for="tasks">Тип задач для автоматизации</label>
-              <select id="tasks" onchange="calculateSavings()">
-                <option value="0.3">Консультации клиентов (30% экономии)</option>
-                <option value="0.5">Обработка заявок (50% экономии)</option>
-                <option value="0.6">Запись и бронирование (60% экономии)</option>
-                <option value="0.7">Отчётность и документы (70% экономии)</option>
-              </select>
-            </div>
-          </div>
-          
-          <div class="calc-result">
-            <div class="calc-result-label">Ваша потенциальная экономия в месяц</div>
-            <div class="calc-result-value" id="savingsResult">₽ 180 000</div>
-            <div class="calc-result-note">*Расчёт приблизительный. Точную сумму обсудим на консультации</div>
-          </div>
-        </div>
-      </section>
-
       <!-- CASES -->
       <section class="section" id="cases">
         <div class="section-header reveal">
@@ -2442,20 +2304,6 @@
         }, 300);
       }, 800);
     });
-
-    // Calculator
-    function calculateSavings() {
-      const employees = parseInt(document.getElementById('employees').value) || 0;
-      const salary = parseInt(document.getElementById('salary').value) || 0;
-      const hours = parseInt(document.getElementById('hours').value) || 3;
-      const taskType = parseFloat(document.getElementById('tasks').value) || 0.5;
-      
-      // Calculate: employees * salary * (hours / 8) * taskType
-      const monthlySavings = Math.round(employees * salary * (hours / 8) * taskType);
-      const formattedSavings = new Intl.NumberFormat('ru-RU').format(monthlySavings);
-      
-      document.getElementById('savingsResult').textContent = '₽ ' + formattedSavings;
-    }
 
     // Popup functions
     function openPopup() {
