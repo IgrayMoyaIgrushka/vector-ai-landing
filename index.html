@@ -455,10 +455,10 @@
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
-      font-size: 13px;
+      gap: 20px;
+      font-size: 15px;
       color: var(--text-muted);
-      padding-top: 20px;
+      padding-top: 24px;
       border-top: 1px solid var(--border-light);
     }
 
@@ -562,6 +562,53 @@
     .hero-card-footer > div:first-child {
       font-size: 13px;
       color: var(--text-muted);
+    }
+
+    /* Мини-кейсы с цифрами */
+    .hero-card-cases {
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(212, 165, 116, 0.05);
+      border-radius: var(--radius-md);
+      border: 1px dashed rgba(212, 165, 116, 0.3);
+    }
+
+    .case-mini {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .case-mini:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .case-mini:first-child {
+      padding-top: 0;
+    }
+
+    .case-mini-value {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #d4a574, #e8c9a5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .case-mini-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f3f4f6;
+      margin-bottom: 4px;
+    }
+
+    .case-mini-desc {
+      font-size: 13px;
+      color: var(--text-muted-2);
+      line-height: 1.5;
     }
 
     .hero-pill {
@@ -1892,6 +1939,26 @@
                 <li>Уведомления о событиях: оплаты, заявки, новые лиды</li>
               </ul>
             </div>
+            
+            <!-- Мини-кейсы с цифрами -->
+            <div class="hero-card-cases">
+              <div class="case-mini">
+                <div class="case-mini-value">300+</div>
+                <div class="case-mini-label">заявок в месяц обрабатывает бот</div>
+                <div class="case-mini-desc">для клиники эстетической медицины</div>
+              </div>
+              <div class="case-mini">
+                <div class="case-mini-value">80%</div>
+                <div class="case-mini-label">снизили нагрузку на поддержку</div>
+                <div class="case-mini-desc">AI-агент отвечает на 8 из 10 вопросов</div>
+              </div>
+              <div class="case-mini">
+                <div class="case-mini-value">40 ч/мес</div>
+                <div class="case-mini-label">экономит автоматизация записи</div>
+                <div class="case-mini-desc">администратор больше не тратит время на рутину</div>
+              </div>
+            </div>
+            
             <div class="hero-card-footer">
               <div>⏱ Стартовые решения — от 1–2 недель</div>
               <div class="hero-pill">Помогаем сформулировать задачу</div>
