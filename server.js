@@ -28,7 +28,12 @@ function escapeHtml(text) {
     .replace(/'/g, '&#39;');
 }
 
-// Endpoint для отправки заявок
+// Health check endpoint (должен быть ДО wildcard маршрута)
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Server is running' });
+});
+
+// Endpoint для отправки заявок (должен быть ДО wildcard маршрута)
 app.post('/api/send-lead', async (req, res) => {
   try {
     const { name, phone, email, company, message } = req.body;
@@ -93,11 +98,6 @@ ${safeMessage || 'Не указано'}
       error: 'Внутренняя ошибка сервера'
     });
   }
-});
-
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', message: 'Server is running' });
 });
 
 // Отдаём index.html для всех остальных запросов (SPA)
