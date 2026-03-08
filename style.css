@@ -890,6 +890,20 @@ header.scrolled {
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-primary);
   box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(168, 149, 168, 0.2), rgba(212, 165, 116, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .card {
@@ -916,7 +930,7 @@ header.scrolled {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 60px rgba(212, 165, 116, 0.15), 0 0 40px rgba(212, 165, 116, 0.1);
   border-color: var(--border-glass);
 }
 
@@ -1069,7 +1083,7 @@ header.scrolled {
 
 .case-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 60px rgba(212, 165, 116, 0.15), 0 0 40px rgba(212, 165, 116, 0.1);
   border-color: var(--border-glass);
 }
 
@@ -1180,7 +1194,7 @@ header.scrolled {
 .step:hover {
   transform: translateY(-4px);
   border-color: var(--border-glass);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 12px 40px rgba(212, 165, 116, 0.1), 0 0 30px rgba(212, 165, 116, 0.08);
 }
 
 .step-num {
@@ -1217,6 +1231,20 @@ header.scrolled {
   padding: 48px;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+}
+
+.form-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(168, 149, 168, 0.2), rgba(212, 165, 116, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .form-header {
@@ -1309,6 +1337,20 @@ header.scrolled {
   gap: 48px;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(168, 149, 168, 0.2), rgba(212, 165, 116, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .contact-content {
