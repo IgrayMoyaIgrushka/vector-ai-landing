@@ -1184,8 +1184,11 @@ header.scrolled {
 
 .price-usd {
   display: none;
-  color: var(--accent-primary);
-  font-weight: 700;
+}
+
+.price-usd-value {
+  color: var(--text-muted);
+  font-weight: 400;
   font-size: 12px;
 }
 
