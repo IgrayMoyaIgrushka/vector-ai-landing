@@ -27,13 +27,16 @@
     </div>
   </div>
 
+  <!-- BACKGROUND -->
   <div class="bg-gradient">
     <div class="glow-orb glow-orb-1"></div>
     <div class="glow-orb glow-orb-2"></div>
     <div class="glow-orb glow-orb-3"></div>
+    <div class="grid-overlay"></div>
   </div>
 
   <div class="page">
+    <!-- HEADER -->
     <header id="header">
       <nav class="nav">
         <div class="nav-left">
@@ -44,172 +47,120 @@
           </div>
         </div>
         <div class="nav-links">
-          <a href="#services">Услуги</a>
-          <a href="#cases">Кейсы</a>
-          <a href="#process">Процесс</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Контакты</a>
+          <a href="#services" data-lang-ru="Услуги" data-lang-en="Services">Услуги</a>
+          <a href="#process" data-lang-ru="Процесс" data-lang-en="Process">Процесс</a>
+          <a href="#contact" data-lang-ru="Контакты" data-lang-en="Contact">Контакты</a>
         </div>
-        <a href="https://t.me/VectorDev001" class="btn-primary">
-          Написать в Telegram
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </a>
+        <div class="nav-right">
+          <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()">
+            <span class="lang-active">RU</span>
+            <span class="lang-separator">/</span>
+            <span class="lang-inactive">EN</span>
+          </button>
+          <a href="https://t.me/VectorDev001" class="btn-primary btn-primary-sm">
+            <span data-lang-ru="Написать в Telegram" data-lang-en="Write on Telegram">Написать в Telegram</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
       </nav>
     </header>
 
     <main>
       <!-- HERO -->
       <section class="section hero" id="top">
-        <div class="reveal">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            📈 Ваш бизнес на автопилоте
-          </div>
-          <h1 class="hero-title">
-            Разработка <span class="hero-gradient">AI‑агентов и телеграм‑ботов</span> для автоматизации процессов и клиентских коммуникаций
-          </h1>
-          <p class="hero-sub">
-            Создаём решения для бизнеса: AI‑агенты и Telegram‑боты для обработки заявок,
-            записи клиентов, поддержки и FAQ, интеграций с CRM и внутренними системами,
-            а также уведомлений и отчётности в режиме реального времени.
-          </p>
-          <div class="hero-cta-row">
-            <a href="#form" class="btn-primary">
-              Оставить запрос
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-            <a href="#services" class="hero-secondary-link">
-              Услуги и решения
-              <span>AI‑агенты, телеграм‑боты, интеграции</span>
-            </a>
-          </div>
-          <div class="hero-meta">
-            <div><strong>🎯 Фокус:</strong> автоматизация бизнес-процессов, AI‑агенты, Telegram‑боты</div>
-            <div><strong>📋 Формат:</strong> фиксированный объём и сроки, сопровождение по договорённости</div>
-            <div><strong>⚡ Скорость:</strong> запуск MVP от 3 дней, полный проект за 2-4 недели</div>
-            <div><strong>💰 Прозрачность:</strong> фиксированная цена, оплата по этапам без скрытых платежей</div>
+        <div class="hero-content">
+          <div class="reveal">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              <span data-lang-ru="📈 Ваш бизнес на автопилоте" data-lang-en="📈 Your business on autopilot">📈 Ваш бизнес на автопилоте</span>
+            </div>
+            <h1 class="hero-title">
+              <span data-lang-ru="Разработка" data-lang-en="Development of">Разработка</span>
+              <span class="hero-gradient">
+                <span data-lang-ru="AI‑агентов и телеграм‑ботов" data-lang-en="AI agents and Telegram bots">AI‑агентов и телеграм‑ботов</span>
+              </span>
+              <br>
+              <span data-lang-ru="для автоматизации процессов" data-lang-en="for process automation">для автоматизации процессов</span>
+            </h1>
+            <p class="hero-sub" data-lang-ru="Создаём решения для бизнеса: AI‑агенты и Telegram‑боты для обработки заявок, записи клиентов, поддержки и FAQ, интеграций с CRM и внутренними системами, а также уведомлений и отчётности в режиме реального времени." data-lang-en="We create business solutions: AI agents and Telegram bots for processing requests, client scheduling, support and FAQ, CRM integrations, and real-time notifications and reporting.">Создаём решения для бизнеса: AI‑агенты и Telegram‑боты для обработки заявок, записи клиентов, поддержки и FAQ, интеграций с CRM и внутренними системами, а также уведомлений и отчётности в режиме реального времени.</p>
+            <div class="hero-cta-row">
+              <a href="#form" class="btn-primary">
+                <span data-lang-ru="Оставить запрос" data-lang-en="Submit Request">Оставить запрос</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+              <a href="#services" class="hero-secondary-link">
+                <span data-lang-ru="Услуги и решения" data-lang-en="Services and Solutions">Услуги и решения</span>
+                <span>AI‑агенты, телеграм‑боты, интеграции</span>
+              </a>
+            </div>
+            <div class="hero-meta">
+              <div>
+                <span class="meta-icon">🎯</span>
+                <strong data-lang-ru="Фокус:" data-lang-en="Focus:">Фокус:</strong>
+                <span data-lang-ru="автоматизация бизнес-процессов, AI‑агенты, Telegram‑боты" data-lang-en="business process automation, AI agents, Telegram bots">автоматизация бизнес-процессов, AI‑агенты, Telegram‑боты</span>
+              </div>
+              <div>
+                <span class="meta-icon">⚡</span>
+                <strong data-lang-ru="Скорость:" data-lang-en="Speed:">Скорость:</strong>
+                <span data-lang-ru="запуск MVP от 3 дней, полный проект за 2-4 недели" data-lang-en="MVP launch from 3 days, full project in 2-4 weeks">запуск MVP от 3 дней, полный проект за 2-4 недели</span>
+              </div>
+              <div>
+                <span class="meta-icon">💰</span>
+                <strong data-lang-ru="Прозрачность:" data-lang-en="Transparency:">Прозрачность:</strong>
+                <span data-lang-ru="фиксированная цена, оплата по этапам без скрытых платежей" data-lang-en="fixed price, milestone payments without hidden fees">фиксированная цена, оплата по этапам без скрытых платежей</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="hero-right reveal">
-          <div class="hero-card">
+          <div class="hero-card glass">
             <div class="hero-glow"></div>
             <div class="hero-card-header">
-              <div class="hero-card-title">Что можно автоматизировать уже сейчас</div>
-              <div class="hero-card-badge">Без сложной доработки инфраструктуры</div>
+              <div class="hero-card-title" data-lang-ru="Что можно автоматизировать уже сейчас" data-lang-en="What you can automate right now">Что можно автоматизировать уже сейчас</div>
+              <div class="hero-card-badge" data-lang-ru="Без сложной доработки инфраструктуры" data-lang-en="Without complex infrastructure changes">Без сложной доработки инфраструктуры</div>
             </div>
             <div class="hero-card-body">
               <ul>
-                <li>Запись к специалистам, напоминания и подтверждения</li>
-                <li>Сбор заявок с лендингов и форм в Telegram</li>
-                <li>AI‑агенты, которые отвечают на частые вопросы</li>
-                <li>Уведомления о событиях: оплаты, заявки, новые лиды</li>
+                <li data-lang-ru="Запись к специалистам, напоминания и подтверждения" data-lang-en="Appointment scheduling, reminders and confirmations">Запись к специалистам, напоминания и подтверждения</li>
+                <li data-lang-ru="Сбор заявок с лендингов и форм в Telegram" data-lang-en="Lead collection from landing pages and forms to Telegram">Сбор заявок с лендингов и форм в Telegram</li>
+                <li data-lang-ru="AI‑агенты, которые отвечают на частые вопросы" data-lang-en="AI agents that answer frequently asked questions">AI‑агенты, которые отвечают на частые вопросы</li>
+                <li data-lang-ru="Уведомления о событиях: оплаты, заявки, новые лиды" data-lang-en="Event notifications: payments, requests, new leads">Уведомления о событиях: оплаты, заявки, новые лиды</li>
               </ul>
             </div>
-            
-            <!-- Мини-кейсы с цифрами -->
-            <div class="hero-card-cases">
+            <div class="hero-card-cases glass-inset">
               <div class="case-mini">
                 <div class="case-mini-icon">📩</div>
                 <div class="case-mini-content">
                   <div class="case-mini-value">300+</div>
-                  <div class="case-mini-label">заявок в месяц обрабатывает бот</div>
-                  <div class="case-mini-desc">для клиники эстетической медицины</div>
+                  <div class="case-mini-label" data-lang-ru="заявок в месяц обрабатывает бот" data-lang-en="requests per month handled by bot">заявок в месяц обрабатывает бот</div>
+                  <div class="case-mini-desc" data-lang-ru="для клиники эстетической медицины" data-lang-en="for an aesthetic medicine clinic">для клиники эстетической медицины</div>
                 </div>
               </div>
               <div class="case-mini">
                 <div class="case-mini-icon">🤖</div>
                 <div class="case-mini-content">
                   <div class="case-mini-value">80%</div>
-                  <div class="case-mini-label">снизили нагрузку на поддержку</div>
-                  <div class="case-mini-desc">AI-агент отвечает на 8 из 10 вопросов</div>
+                  <div class="case-mini-label" data-lang-ru="снизили нагрузку на поддержку" data-lang-en="reduced support workload">снизили нагрузку на поддержку</div>
+                  <div class="case-mini-desc" data-lang-ru="AI-агент отвечает на 8 из 10 вопросов" data-lang-en="AI agent answers 8 out of 10 questions">AI-агент отвечает на 8 из 10 вопросов</div>
                 </div>
               </div>
               <div class="case-mini">
                 <div class="case-mini-icon">⏰</div>
                 <div class="case-mini-content">
                   <div class="case-mini-value">40 ч/мес</div>
-                  <div class="case-mini-label">экономит автоматизация записи</div>
-                  <div class="case-mini-desc">администратор больше не тратит время на рутину</div>
+                  <div class="case-mini-label" data-lang-ru="экономит автоматизация записи" data-lang-en="saved by appointment automation">экономит автоматизация записи</div>
+                  <div class="case-mini-desc" data-lang-ru="администратор больше не тратит время на рутину" data-lang-en="administrator no longer wastes time on routine">администратор больше не тратит время на рутину</div>
                 </div>
               </div>
             </div>
-            
             <div class="hero-card-footer">
-              <div>⏱ Стартовые решения — от 1–2 недель</div>
-              <div class="hero-pill">Помогаем сформулировать задачу</div>
+              <div data-lang-ru="⏱ Стартовые решения — от 1–2 недель" data-lang-en="⏱ Starter solutions — from 1-2 weeks">⏱ Стартовые решения — от 1–2 недель</div>
+              <div class="hero-pill" data-lang-ru="Помогаем сформулировать задачу" data-lang-en="We help formulate the task">Помогаем сформулировать задачу</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- STATS -->
-      <section class="section">
-        <div class="stats-bar reveal">
-          <div class="stat-item">
-            <div class="stat-value">50+</div>
-            <div class="stat-label">проектов реализовано</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">2 нед</div>
-            <div class="stat-label">средний срок запуска</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">24/7</div>
-            <div class="stat-label">работают наши боты</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">95%</div>
-            <div class="stat-label">клиентов рекомендуют нас</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHY US -->
-      <section class="section" id="why">
-        <div class="section-header reveal">
-          <div class="section-header-left">
-            <div class="tag">Преимущества</div>
-            <h2 class="section-title">Почему выбирают Vector AI</h2>
-            <p class="section-kicker">
-              Мы не просто делаем ботов — мы создаём решения, которые приносят измеримую пользу бизнесу.
-            </p>
-          </div>
-        </div>
-
-        <div class="why-grid">
-          <div class="why-item reveal reveal-delay-1">
-            <div class="why-icon">⚡</div>
-            <h3 class="why-title">Быстрый запуск</h3>
-            <p class="why-text">Первый работающий прототип уже через 3 дня после старта. Полноценное решение — от 2 недель.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-2">
-            <div class="why-icon">🎯</div>
-            <h3 class="why-title">Фокус на результате</h3>
-            <p class="why-text">Не продаём технологии ради технологий. Делаем то, что решает ваши бизнес-задачи.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-3">
-            <div class="why-icon">🔒</div>
-            <h3 class="why-title">Надёжность и безопасность</h3>
-            <p class="why-text">Ваши данные под защитой. Работаем по договору, соблюдаем конфиденциальность.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-1">
-            <div class="why-icon">💰</div>
-            <h3 class="why-title">Прозрачное ценообразование</h3>
-            <p class="why-text">Фиксируем стоимость и сроки до начала работ. Никаких скрытых платежей.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-2">
-            <div class="why-icon">🤝</div>
-            <h3 class="why-title">Поддержка 24/7</h3>
-            <p class="why-text">Не бросаем после запуска. Обеспечиваем техническую поддержку и развитие решений.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-3">
-            <div class="why-icon">📊</div>
-            <h3 class="why-title">Измеримая польза</h3>
-            <p class="why-text">Предоставляем отчёты по экономии времени и увеличению конверсии после внедрения.</p>
           </div>
         </div>
       </section>
@@ -218,174 +169,100 @@
       <section class="section" id="services">
         <div class="section-header reveal">
           <div class="section-header-left">
-            <div class="tag">Услуги</div>
-            <h2 class="section-title">AI‑агенты, телеграм‑боты и интеграции</h2>
-            <p class="section-kicker">
-              Проектируем и внедряем решения под задачи бизнеса. Можно начать с базового MVP
-              и последовательно развивать функциональность.
-            </p>
+            <div class="tag" data-lang-ru="Услуги" data-lang-en="Services">Услуги</div>
+            <h2 class="section-title" data-lang-ru="AI‑агенты, телеграм‑боты и интеграции" data-lang-en="AI Agents, Telegram Bots and Integrations">AI‑агенты, телеграм‑боты и интеграции</h2>
+            <p class="section-kicker" data-lang-ru="Проектируем и внедряем решения под задачи бизнеса. Можно начать с базового MVP и последовательно развивать функциональность." data-lang-en="We design and implement solutions for business needs. You can start with a basic MVP and gradually develop functionality.">Проектируем и внедряем решения под задачи бизнеса. Можно начать с базового MVP и последовательно развивать функциональность.</p>
           </div>
         </div>
 
         <div class="cards-grid">
-          <article class="card reveal reveal-delay-1">
-            <div class="card-label">Бизнес‑боты</div>
-            <h3 class="card-title">Запись, заявки, воронки продаж</h3>
-            <p class="card-text">
-              Телеграм‑боты, которые берут на себя первичную коммуникацию: принимают заявки,
-              собирают контакты и структурируют данные для менеджеров.
-            </p>
+          <article class="card glass reveal reveal-delay-1">
+            <div class="card-label" data-lang-ru="Бизнес‑боты" data-lang-en="Business Bots">Бизнес‑боты</div>
+            <h3 class="card-title" data-lang-ru="Запись, заявки, воронки продаж" data-lang-en="Appointments, Leads, Sales Funnels">Запись, заявки, воронки продаж</h3>
+            <p class="card-text" data-lang-ru="Телеграм‑боты, которые берут на себя первичную коммуникацию: принимают заявки, собирают контакты и структурируют данные для менеджеров." data-lang-en="Telegram bots that handle primary communication: receive requests, collect contacts and structure data for managers.">Телеграм‑боты, которые берут на себя первичную коммуникацию: принимают заявки, собирают контакты и структурируют данные для менеджеров.</p>
             <ul class="card-list">
-              <li>Запись к специалистам и онлайн‑бронирование</li>
-              <li>Анкеты и опросы для квалификации лидов</li>
-              <li>Сценарии продаж и допродаж в несколько шагов</li>
+              <li data-lang-ru="Запись к специалистам и онлайн‑бронирование" data-lang-en="Appointment scheduling and online booking">Запись к специалистам и онлайн‑бронирование</li>
+              <li data-lang-ru="Анкеты и опросы для квалификации лидов" data-lang-en="Questionnaires and surveys for lead qualification">Анкеты и опросы для квалификации лидов</li>
+              <li data-lang-ru="Сценарии продаж и допродаж в несколько шагов" data-lang-en="Multi-step sales and upsell scenarios">Сценарии продаж и допродаж в несколько шагов</li>
             </ul>
             <div class="card-footer">
-              <span>От прототипа до продакшена</span>
-              <span class="price-pill">по задаче</span>
+              <span data-lang-ru="От прототипа до продакшена" data-lang-en="From prototype to production">От прототипа до продакшена</span>
+              <span class="price-pill" data-lang-ru="по задаче" data-lang-en="per task">по задаче</span>
             </div>
           </article>
 
-          <article class="card reveal reveal-delay-2">
-            <div class="card-label">AI‑агенты</div>
-            <h3 class="card-title">Интеллектуальные ассистенты</h3>
-            <p class="card-text">
-              AI‑агенты на базе современных моделей, которые работают с вашей базой знаний
-              и помогают клиентам и сотрудникам в типовых сценариях.
-            </p>
+          <article class="card glass reveal reveal-delay-2">
+            <div class="card-label" data-lang-ru="AI‑агенты" data-lang-en="AI Agents">AI‑агенты</div>
+            <h3 class="card-title" data-lang-ru="Интеллектуальные ассистенты" data-lang-en="Intelligent Assistants">Интеллектуальные ассистенты</h3>
+            <p class="card-text" data-lang-ru="AI‑агенты на базе современных моделей, которые работают с вашей базой знаний и помогают клиентам и сотрудникам в типовых сценариях." data-lang-en="AI agents based on modern models that work with your knowledge base and help clients and employees in typical scenarios.">AI‑агенты на базе современных моделей, которые работают с вашей базой знаний и помогают клиентам и сотрудникам в типовых сценариях.</p>
             <ul class="card-list">
-              <li>Обработка FAQ и консультации по материалам</li>
-              <li>Помощь в подборе тарифов, услуг, продуктов</li>
-              <li>Генерация ответов, писем и сообщений</li>
+              <li data-lang-ru="Обработка FAQ и консультации по материалам" data-lang-en="FAQ processing and consultations on materials">Обработка FAQ и консультации по материалам</li>
+              <li data-lang-ru="Помощь в подборе тарифов, услуг, продуктов" data-lang-en="Help with selecting tariffs, services, products">Помощь в подборе тарифов, услуг, продуктов</li>
+              <li data-lang-ru="Генерация ответов, писем и сообщений" data-lang-en="Generation of responses, emails and messages">Генерация ответов, писем и сообщений</li>
             </ul>
             <div class="card-footer">
-              <span>Настройка промта и ограничений</span>
-              <span class="price-pill">индивидуально</span>
+              <span data-lang-ru="Настройка промта и ограничений" data-lang-en="Prompt and constraints setup">Настройка промта и ограничений</span>
+              <span class="price-pill" data-lang-ru="индивидуально" data-lang-en="individually">индивидуально</span>
             </div>
           </article>
 
-          <article class="card reveal reveal-delay-3">
-            <div class="card-label">Интеграции</div>
-            <h3 class="card-title">Связь с CRM и сервисами</h3>
-            <p class="card-text">
-              Интегрируем ботов и агентов с существующей инфраструктурой, выстраиваем
-              автоматические сценарии обмена данными.
-            </p>
+          <article class="card glass reveal reveal-delay-3">
+            <div class="card-label" data-lang-ru="Интеграции" data-lang-en="Integrations">Интеграции</div>
+            <h3 class="card-title" data-lang-ru="Связь с CRM и сервисами" data-lang-en="CRM and Services Integration">Связь с CRM и сервисами</h3>
+            <p class="card-text" data-lang-ru="Интегрируем ботов и агентов с существующей инфраструктурой, выстраиваем автоматические сценарии обмена данными." data-lang-en="We integrate bots and agents with existing infrastructure, build automatic data exchange scenarios.">Интегрируем ботов и агентов с существующей инфраструктурой, выстраиваем автоматические сценарии обмена данными.</p>
             <ul class="card-list">
-              <li>Интеграция с CRM, Google Sheets, Notion</li>
-              <li>Автоматическая отправка уведомлений и отчётов</li>
-              <li>Поддержка уже работающих решений</li>
+              <li data-lang-ru="Интеграция с CRM, Google Sheets, Notion" data-lang-en="Integration with CRM, Google Sheets, Notion">Интеграция с CRM, Google Sheets, Notion</li>
+              <li data-lang-ru="Автоматическая отправка уведомлений и отчётов" data-lang-en="Automatic sending of notifications and reports">Автоматическая отправка уведомлений и отчётов</li>
+              <li data-lang-ru="Поддержка уже работающих решений" data-lang-en="Support for existing solutions">Поддержка уже работающих решений</li>
             </ul>
             <div class="card-footer">
-              <span>Поэтапное внедрение</span>
-              <span class="price-pill">на брифе</span>
+              <span data-lang-ru="Поэтапное внедрение" data-lang-en="Phased implementation">Поэтапное внедрение</span>
+              <span class="price-pill" data-lang-ru="на брифе" data-lang-en="on brief">на брифе</span>
             </div>
           </article>
 
-          <article class="card reveal reveal-delay-1">
-            <div class="card-label">Финансы</div>
-            <h3 class="card-title">Финансовый бот‑отчётник</h3>
-            <p class="card-text">
-              Бот, который собирает доходы и расходы в одном месте и сам присылает понятные отчёты в Telegram. Владельцу остаётся только принимать решения.
-            </p>
+          <article class="card glass reveal reveal-delay-1">
+            <div class="card-label" data-lang-ru="Финансы" data-lang-en="Finance">Финансы</div>
+            <h3 class="card-title" data-lang-ru="Финансовый бот‑отчётник" data-lang-en="Financial Reporting Bot">Финансовый бот‑отчётник</h3>
+            <p class="card-text" data-lang-ru="Бот, который собирает доходы и расходы в одном месте и сам присылает понятные отчёты в Telegram." data-lang-en="A bot that collects income and expenses in one place and sends clear reports to Telegram.">Бот, который собирает доходы и расходы в одном месте и сам присылает понятные отчёты в Telegram.</p>
             <ul class="card-list">
-              <li>Быстрый учёт денег без Excel и сложных таблиц</li>
-              <li>Ежедневные/еженедельные отчёты по выручке, расходам и прибыли</li>
-              <li>Понимание, куда уходят деньги и где можно сократить затраты</li>
+              <li data-lang-ru="Быстрый учёт денег без Excel и сложных таблиц" data-lang-en="Quick money tracking without Excel and complex spreadsheets">Быстрый учёт денег без Excel и сложных таблиц</li>
+              <li data-lang-ru="Ежедневные/еженедельные отчёты по выручке, расходам и прибыли" data-lang-en="Daily/weekly reports on revenue, expenses and profit">Ежедневные/еженедельные отчёты по выручке, расходам и прибыли</li>
+              <li data-lang-ru="Понимание, куда уходят деньги и где можно сократить затраты" data-lang-en="Understanding where money goes and where to cut costs">Понимание, куда уходят деньги и где можно сократить затраты</li>
             </ul>
             <div class="card-footer">
-              <span>Контроль финансов в реальном времени</span>
+              <span data-lang-ru="Контроль финансов в реальном времени" data-lang-en="Real-time financial control">Контроль финансов в реальном времени</span>
               <span class="price-pill">от 15 000 ₽</span>
             </div>
           </article>
 
-          <article class="card reveal reveal-delay-2">
-            <div class="card-label">HR</div>
-            <h3 class="card-title">HR‑бот для смен и выплат</h3>
-            <p class="card-text">
-              Удобный бот для учёта рабочего времени, заявок сотрудников и расчёта выплат — прямо в Telegram, без бумажек и хаоса в чатах.
-            </p>
+          <article class="card glass reveal reveal-delay-2">
+            <div class="card-label" data-lang-ru="HR" data-lang-en="HR">HR</div>
+            <h3 class="card-title" data-lang-ru="HR‑бот для смен и выплат" data-lang-en="HR Bot for Shifts and Payments">HR‑бот для смен и выплат</h3>
+            <p class="card-text" data-lang-ru="Удобный бот для учёта рабочего времени, заявок сотрудников и расчёта выплат — прямо в Telegram." data-lang-en="Convenient bot for tracking working hours, employee requests and payment calculations — right in Telegram.">Удобный бот для учёта рабочего времени, заявок сотрудников и расчёта выплат — прямо в Telegram.</p>
             <ul class="card-list">
-              <li>Сотрудники сами отмечают начало и конец смены</li>
-              <li>Заявки на отпуск, выходные и переработки через бота</li>
-              <li>Автоматическая сводка по часам и выплатам для каждого сотрудника</li>
+              <li data-lang-ru="Сотрудники сами отмечают начало и конец смены" data-lang-en="Employees mark shift start and end themselves">Сотрудники сами отмечают начало и конец смены</li>
+              <li data-lang-ru="Заявки на отпуск, выходные и переработки через бота" data-lang-en="Vacation, day-off and overtime requests via bot">Заявки на отпуск, выходные и переработки через бота</li>
+              <li data-lang-ru="Автоматическая сводка по часам и выплатам для каждого сотрудника" data-lang-en="Automatic summary of hours and payments for each employee">Автоматическая сводка по часам и выплатам для каждого сотрудника</li>
             </ul>
             <div class="card-footer">
-              <span>Для команд от 5 человек</span>
+              <span data-lang-ru="Для команд от 5 человек" data-lang-en="For teams of 5+ people">Для команд от 5 человек</span>
               <span class="price-pill">от 12 000 ₽</span>
             </div>
           </article>
 
-          <article class="card reveal reveal-delay-3">
-            <div class="card-label">Операционка</div>
-            <h3 class="card-title">Операционный диспетчер‑бот</h3>
-            <p class="card-text">
-              Бот, который принимает заявки, превращает их в задачи и следит за дедлайнами, чтобы ничего не терялось в переписках.
-            </p>
+          <article class="card glass reveal reveal-delay-3">
+            <div class="card-label" data-lang-ru="Операционка" data-lang-en="Operations">Операционка</div>
+            <h3 class="card-title" data-lang-ru="Операционный диспетчер‑бот" data-lang-en="Operations Dispatcher Bot">Операционный диспетчер‑бот</h3>
+            <p class="card-text" data-lang-ru="Бот, который принимает заявки, превращает их в задачи и следит за дедлайнами, чтобы ничего не терялось." data-lang-en="A bot that receives requests, converts them to tasks and tracks deadlines so nothing gets lost.">Бот, который принимает заявки, превращает их в задачи и следит за дедлайнами, чтобы ничего не терялось.</p>
             <ul class="card-list">
-              <li>Приём заявок от клиентов и сотрудников в одном канале</li>
-              <li>Автоматическая постановка задач в Trello/Notion/таблицы</li>
-              <li>Напоминания о дедлайнах и контроль просроченных задач</li>
+              <li data-lang-ru="Приём заявок от клиентов и сотрудников в одном канале" data-lang-en="Receiving requests from clients and employees in one channel">Приём заявок от клиентов и сотрудников в одном канале</li>
+              <li data-lang-ru="Автоматическая постановка задач в Trello/Notion/таблицы" data-lang-en="Automatic task creation in Trello/Notion/spreadsheets">Автоматическая постановка задач в Trello/Notion/таблицы</li>
+              <li data-lang-ru="Напоминания о дедлайнах и контроль просроченных задач" data-lang-en="Deadline reminders and overdue task tracking">Напоминания о дедлайнах и контроль просроченных задач</li>
             </ul>
             <div class="card-footer">
-              <span>Интеграция с таск‑трекерами</span>
+              <span data-lang-ru="Интеграция с таск‑трекерами" data-lang-en="Integration with task trackers">Интеграция с таск‑трекерами</span>
               <span class="price-pill">от 18 000 ₽</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CASES -->
-      <section class="section" id="cases">
-        <div class="section-header reveal">
-          <div class="section-header-left">
-            <div class="tag">Кейсы</div>
-            <h2 class="section-title">Типовые сценарии работы</h2>
-            <p class="section-kicker">
-              Несколько базовых сценариев, которые можно адаптировать под отрасль
-              и специфику вашей компании.
-            </p>
-          </div>
-        </div>
-
-        <div class="cases-grid">
-          <article class="case reveal reveal-delay-1">
-            <div class="case-header">
-              <h3 class="case-title">Бот для записи и управления расписанием</h3>
-              <span class="case-tag">запись + напоминания</span>
-            </div>
-            <p class="case-text">
-              Клиент самостоятельно выбирает время, оставляет контакты, получает
-              подтверждение и напоминания. Ответственный видит всю нагрузку в Telegram.
-            </p>
-            <ul class="case-list">
-              <li>Снижение нагрузки на менеджеров</li>
-              <li>Напоминания и подтверждения визитов</li>
-              <li>Сводка записей за день/неделю</li>
-            </ul>
-            <div class="case-meta">
-              <span>🏥 Услуги, медицина, образование</span>
-              <span>📈 Масштабируется на сеть филиалов</span>
-            </div>
-          </article>
-
-          <article class="case reveal reveal-delay-2">
-            <div class="case-header">
-              <h3 class="case-title">AI‑агент‑консультант по продукту</h3>
-              <span class="case-tag">поддержка + лиды</span>
-            </div>
-            <p class="case-text">
-              Агент отвечает на частые вопросы, работает с материалами компании и
-              передаёт подготовленных клиентов в отдел продаж.
-            </p>
-            <ul class="case-list">
-              <li>Круглосуточная обработка запросов</li>
-              <li>Поддержка на нескольких языках</li>
-              <li>Передача данных в CRM или Telegram</li>
-            </ul>
-            <div class="case-meta">
-              <span>💻 SaaS, онлайн‑сервисы</span>
-              <span>⚙️ Гибкая настройка под регламенты</span>
             </div>
           </article>
         </div>
@@ -395,111 +272,73 @@
       <section class="section" id="process">
         <div class="section-header reveal">
           <div class="section-header-left">
-            <div class="tag">Процесс</div>
-            <h2 class="section-title">Как мы работаем</h2>
-            <p class="section-kicker">
-              Чёткий процесс от заявки до результата — прозрачно и в срок
-            </p>
+            <div class="tag" data-lang-ru="Процесс" data-lang-en="Process">Процесс</div>
+            <h2 class="section-title" data-lang-ru="Как мы работаем" data-lang-en="How We Work">Как мы работаем</h2>
+            <p class="section-kicker" data-lang-ru="Чёткий процесс от заявки до результата — прозрачно и в срок" data-lang-en="Clear process from request to result — transparent and on time">Чёткий процесс от заявки до результата — прозрачно и в срок</p>
           </div>
         </div>
 
         <div class="steps">
-          <div class="step reveal reveal-delay-1">
+          <div class="step glass reveal reveal-delay-1">
             <div class="step-num">01</div>
-            <div class="step-title">Анализ задачи</div>
-            <p>Обсуждаем требования и цели проекта. Подбираем оптимальное решение под ваши задачи.</p>
+            <div class="step-title" data-lang-ru="Анализ задачи" data-lang-en="Task Analysis">Анализ задачи</div>
+            <p data-lang-ru="Обсуждаем требования и цели проекта. Подбираем оптимальное решение под ваши задачи." data-lang-en="We discuss project requirements and goals. We select the optimal solution for your tasks.">Обсуждаем требования и цели проекта. Подбираем оптимальное решение под ваши задачи.</p>
           </div>
-          <div class="step reveal reveal-delay-2">
+          <div class="step glass reveal reveal-delay-2">
             <div class="step-num">02</div>
-            <div class="step-title">Оценка и договорённости</div>
-            <p>Фиксируем сроки, бюджет и этапы работы. Согласуем техническое задание.</p>
+            <div class="step-title" data-lang-ru="Оценка и договорённости" data-lang-en="Estimation and Agreement">Оценка и договорённости</div>
+            <p data-lang-ru="Фиксируем сроки, бюджет и этапы работы. Согласуем техническое задание." data-lang-en="We fix deadlines, budget and work stages. We agree on the technical specification.">Фиксируем сроки, бюджет и этапы работы. Согласуем техническое задание.</p>
           </div>
-          <div class="step reveal reveal-delay-3">
+          <div class="step glass reveal reveal-delay-3">
             <div class="step-num">03</div>
-            <div class="step-title">Разработка и тестирование</div>
-            <p>Создаём решение, подключаем интеграции, тестируем на реальных сценариях.</p>
+            <div class="step-title" data-lang-ru="Разработка и тестирование" data-lang-en="Development and Testing">Разработка и тестирование</div>
+            <p data-lang-ru="Создаём решение, подключаем интеграции, тестируем на реальных сценариях." data-lang-en="We create the solution, connect integrations, test on real scenarios.">Создаём решение, подключаем интеграции, тестируем на реальных сценариях.</p>
           </div>
-          <div class="step reveal reveal-delay-4">
+          <div class="step glass reveal reveal-delay-4">
             <div class="step-num">04</div>
-            <div class="step-title">Запуск и поддержка</div>
-            <p>Запускаем проект, передаём доступы. Обеспечиваем техническую поддержку.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="section" id="faq">
-        <div class="section-header reveal">
-          <div class="section-header-left">
-            <div class="tag">FAQ</div>
-            <h2 class="section-title">Часто задаваемые вопросы</h2>
-          </div>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-item reveal reveal-delay-1">
-            <div class="faq-q">От чего зависит стоимость проекта?</div>
-            <div class="faq-a">
-              Бюджет определяется сложностью сценариев, количеством интеграций и требованиями к надёжности и масштабируемости. Базовую вилку цен озвучиваем после брифа.
-            </div>
-          </div>
-          <div class="faq-item reveal reveal-delay-2">
-            <div class="faq-q">Какие сроки внедрения?</div>
-            <div class="faq-a">
-              Стартовые решения по типовым сценариям обычно занимают от 1–2 недель. Для комплексных проектов сроки рассчитываются индивидуально.
-            </div>
-          </div>
-          <div class="faq-item reveal reveal-delay-3">
-            <div class="faq-q">Нужны ли собственные сервера?</div>
-            <div class="faq-a">
-              Возможны варианты: использование облачных платформ или развёртывание на ��ашем VPS. Рекомендуем подход в зависимости от нагрузки и требований по безопасности.
-            </div>
-          </div>
-          <div class="faq-item reveal reveal-delay-4">
-            <div class="faq-q">Можете ли вы доработать уже существующего бота?</div>
-            <div class="faq-a">
-              Да, мы можем провести аудит текущего решения, предложить оптимизации и аккуратно доработать функциональность при наличии доступа к коду и токенам.
-            </div>
+            <div class="step-title" data-lang-ru="Запуск и поддержка" data-lang-en="Launch and Support">Запуск и поддержка</div>
+            <p data-lang-ru="Запускаем проект, передаём доступы. Обеспечиваем техническую поддержку." data-lang-en="We launch the project, transfer access. We provide technical support.">Запускаем проект, передаём доступы. Обеспечиваем техническую поддержку.</p>
           </div>
         </div>
       </section>
 
       <!-- FORM -->
       <section class="section" id="form">
-        <div class="form-section reveal">
-          <h3 class="form-title">📋 Получить бесплатную консультацию</h3>
-          <p class="form-subtitle">Оставьте заявку — мы свяжемся в течение 15 минут и обсудим ваш проект</p>
-          
+        <div class="form-section glass reveal">
+          <div class="form-header">
+            <h3 class="form-title">
+              <span data-lang-ru="📋 Получить бесплатную консультацию" data-lang-en="📋 Get a Free Consultation">📋 Получить бесплатную консультацию</span>
+            </h3>
+            <p class="form-subtitle" data-lang-ru="Оставьте заявку — мы свяжемся в течение 15 минут и обсудим ваш проект" data-lang-en="Leave a request — we will contact you within 15 minutes and discuss your project">Оставьте заявку — мы свяжемся в течение 15 минут и обсудим ваш проект</p>
+          </div>
+
           <form class="form-grid" onsubmit="submitForm(event)">
             <div class="form-group">
-              <label for="name">Ваше имя *</label>
+              <label for="name" data-lang-ru="Ваше имя *" data-lang-en="Your Name *">Ваше имя *</label>
               <input type="text" id="name" name="name" required placeholder="Иван Петров">
             </div>
             <div class="form-group">
-              <label for="phone">Телефон *</label>
+              <label for="phone" data-lang-ru="Телефон *" data-lang-en="Phone *">Телефон *</label>
               <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 000-00-00">
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email" data-lang-ru="Email" data-lang-en="Email">Email</label>
               <input type="email" id="email" name="email" placeholder="example@mail.ru">
             </div>
             <div class="form-group">
-              <label for="company">Название компании</label>
+              <label for="company" data-lang-ru="Название компании" data-lang-en="Company Name">Название компании</label>
               <input type="text" id="company" name="company" placeholder="ООО «Вектор»">
             </div>
             <div class="form-group full-width">
-              <label for="message">Опишите задачу *</label>
+              <label for="message" data-lang-ru="Опишите задачу *" data-lang-en="Describe the Task *">Опишите задачу *</label>
               <textarea id="message" name="message" required placeholder="Какие процессы хотите автоматизировать?"></textarea>
             </div>
             <div class="form-submit">
               <button type="submit" class="btn-primary">
-                Отправить заявку
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
+                <span data-lang-ru="Отправить заявку" data-lang-en="Submit Request">Отправить заявку</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-              </button>
-              <button type="button" class="btn-secondary" onclick="openPopup()">
-                🎁 Получить чек-лист
               </button>
             </div>
           </form>
@@ -508,20 +347,18 @@
 
       <!-- CONTACT -->
       <section class="section" id="contact">
-        <div class="contact reveal">
-          <div class="contact-text">
-            <p><strong>Рассматриваете автоматизацию на базе AI‑агентов и Telegram‑ботов?</strong></p>
-            <p>
-              Отправьте нам краткое описание задачи в Telegram — мы вернёмся с предложением
-              по возможному решению, срокам и ориентировочному бюджету.
+        <div class="contact glass reveal">
+          <div class="contact-content">
+            <h2 class="contact-title" data-lang-ru="Давайте обсудим ваш проект" data-lang-en="Let's Discuss Your Project">Давайте обсудим ваш проект</h2>
+            <p class="contact-text" data-lang-ru="Рассматриваете автоматизацию на базе AI‑агентов и Telegram‑ботов? Отправьте нам краткое описание задачи в Telegram — мы вернёмся с предложением по возможному решению, срокам и ориентировочному бюджету." data-lang-en="Considering automation based on AI agents and Telegram bots? Send us a brief description of the task in Telegram — we will come back with a proposal for a possible solution, timing and estimated budget.">
+              <strong data-lang-ru="Рассматриваете автоматизацию на базе AI‑агентов и Telegram‑ботов?" data-lang-en="Considering automation based on AI agents and Telegram bots?">Рассматриваете автоматизацию на базе AI‑агентов и Telegram‑ботов?</strong>
+              <br><br>
+              <span data-lang-ru="Отправьте нам краткое описание задачи в Telegram — мы вернёмся с предложением по возможному решению, срокам и ориентировочному бюджету." data-lang-en="Send us a brief description of the task in Telegram — we will come back with a proposal for a possible solution, timing and estimated budget.">Отправьте нам краткое описание задачи в Telegram — мы вернёмся с предложением по возможному решению, срокам и ориентировочному бюджету.</span>
             </p>
-            <p class="contact-note">
-              На первом этапе достаточно описать текущий процесс и желаемый результат —
-              остальное мы поможем структурировать.
-            </p>
+            <p class="contact-note" data-lang-ru="На первом этапе достаточно описать текущий процесс и желаемый результат — остальное мы поможем структурировать." data-lang-en="At the first stage, it's enough to describe the current process and desired result — we will help structure the rest.">На первом этапе достаточно описать текущий процесс и желаемый результат — остальное мы поможем структурировать.</p>
           </div>
-          <a href="https://t.me/VectorDev001" class="btn-primary">
-            Написать в Telegram
+          <a href="https://t.me/VectorDev001" class="btn-primary btn-large">
+            <span data-lang-ru="Написать в Telegram" data-lang-en="Write on Telegram">Написать в Telegram</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -530,52 +367,67 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
-      <p>© <span id="year"></span> Vector AI — Интеллектуальная автоматизация и телеграм-боты.</p>
-      <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">Не является публичной офертой.</p>
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="logo-mark logo-mark-sm">V</div>
+          <div class="footer-text">
+            <div class="footer-title">Vector AI</div>
+            <div class="footer-sub" data-lang-ru="Интеллектуальная автоматизация и телеграм-боты" data-lang-en="Intelligent automation and Telegram bots">Интеллектуальная автоматизация и телеграм-боты</div>
+          </div>
+        </div>
+        <div class="footer-right">
+          <span data-lang-ru="© 2026 Vector AI" data-lang-en="© 2026 Vector AI">© <span id="year"></span> Vector AI</span>
+          <span class="footer-disclaimer" data-lang-ru="Не является публичной офертой" data-lang-en="Not a public offer">Не является публичной офертой</span>
+        </div>
+      </div>
     </footer>
-
-    <!-- POPUP -->
-    <div class="popup-overlay" id="popupOverlay">
-      <div class="popup">
-        <button class="popup-close" onclick="closePopup()">×</button>
-        <div class="popup-icon">🎁</div>
-        <h3 class="popup-title">Получите чек-лист бесплатно</h3>
-        <p class="popup-subtitle">«5 процессов, которые можно автоматизировать уже сегодня» — сэкономьте до 20 часов в неделю</p>
-        <ul class="popup-benefits">
-          <li>Список процессов для автоматизации</li>
-          <li>Оценка экономии для каждого процесса</li>
-          <li>Примеры внедрения с цифрами</li>
-          <li>Чек-лист выбора подрядчика</li>
-        </ul>
-        <form class="popup-form" onsubmit="submitPopup(event)">
-          <input type="text" placeholder="Ваше имя" required>
-          <input type="tel" placeholder="Телефон" required>
-          <input type="email" placeholder="Email" required>
-          <button type="submit" class="btn-primary">
-            Получить чек-лист
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </button>
-        </form>
-        <p class="popup-note">Нажимаю кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-      </div>
-    </div>
-
-    <!-- CALLBACK WIDGET -->
-    <div class="callback-widget">
-      <div class="callback-message" id="callbackMessage">
-        <strong>Нужна помощь?</strong>
-        Оставьте заявку — перезвоним через 5 минут!
-      </div>
-      <button class="callback-btn" onclick="toggleCallback()" title="Заказать звонок">
-        📞
-      </button>
-    </div>
   </div>
 
   <script>
+    // Language toggle
+    let currentLang = 'ru';
+    
+    function toggleLanguage() {
+      currentLang = currentLang === 'ru' ? 'en' : 'ru';
+      
+      const langActive = document.querySelector('.lang-active');
+      const langInactive = document.querySelector('.lang-inactive');
+      
+      if (currentLang === 'ru') {
+        langActive.textContent = 'RU';
+        langInactive.textContent = 'EN';
+        document.documentElement.lang = 'ru';
+      } else {
+        langActive.textContent = 'EN';
+        langInactive.textContent = 'RU';
+        document.documentElement.lang = 'en';
+      }
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-lang-ru]').forEach(el => {
+        const key = currentLang === 'ru' ? 'data-lang-ru' : 'data-lang-en';
+        const text = el.getAttribute(key);
+        if (text) {
+          // Handle nested spans with hero-gradient
+          if (el.classList.contains('hero-gradient')) {
+            const innerSpan = el.querySelector('span');
+            if (innerSpan) {
+              innerSpan.textContent = text;
+            }
+          } else {
+            el.textContent = text;
+          }
+        }
+      });
+      
+      // Update placeholder attributes
+      document.querySelectorAll('input[placeholder-ru]').forEach(el => {
+        el.placeholder = currentLang === 'ru' ? el.getAttribute('placeholder-ru') : el.getAttribute('placeholder-en');
+      });
+    }
+
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Header scroll effect
@@ -609,18 +461,14 @@
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       const preloaderContent = preloader.querySelector('.preloader-content');
-      
-      // Ждём 0.8 секунды для показа логотипа
+
       setTimeout(() => {
-        // Сначала скрываем контент (логотип и текст)
         preloaderContent.style.opacity = '0';
         preloaderContent.style.transform = 'scale(1.1)';
-        
-        // Через 0.3 секунды начинаем раздвигать шторы
+
         setTimeout(() => {
           preloader.classList.add('loaded');
-          
-          // Полностью удаляем прелоадер после завершения анимации
+
           setTimeout(() => {
             preloader.style.display = 'none';
           }, 800);
@@ -628,104 +476,63 @@
       }, 800);
     });
 
-    // Popup functions
-    function openPopup() {
-      document.getElementById('popupOverlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePopup() {
-      document.getElementById('popupOverlay').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('popupOverlay')?.addEventListener('click', (e) => {
-      if (e.target === document.getElementById('popupOverlay')) {
-        closePopup();
-      }
-    });
-
-    // Form submissions - отправляем данные на наш сервер
-    // Для локальной разработки: http://localhost:3000/api/send-lead
-    // Для production: укажите ваш URL на Render
-    const API_URL = window.location.hostname === 'localhost' 
-      ? 'http://localhost:3000/api/send-lead' 
-      : '/api/send-lead';
-
+    // Form submission
     function submitForm(event) {
       event.preventDefault();
+      
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      const message = `
+📬 <b>Новая заявка с сайта Vector AI</b>
 
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const email = document.getElementById('email').value;
-      const company = document.getElementById('company').value;
-      const message = document.getElementById('message').value;
+👤 <b>Имя:</b> ${data.name}
+📱 <b>Телефон:</b> ${data.phone}
+✉️ <b>Email:</b> ${data.email || 'не указан'}
+🏢 <b>Компания:</b> ${data.company || 'не указана'}
 
-      const submitBtn = event.target.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-
-      // Показываем что отправляется
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '⏳ Отправка...';
-
-      // Отправляем данные на наш сервер
-      fetch(API_URL, {
+📝 <b>Задача:</b>
+${data.message}
+      `.trim();
+      
+      const token = '7513955103:AACzDyyB0IRW';
+      const chatId = '-1002325621187';
+      
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, company, message })
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML'
+        })
       })
       .then(response => response.json())
       .then(data => {
-        if (data.success) {
-          alert(`✅ Спасибо, ${name}! Заявка отправлена.\nМы свяжемся с вами по номеру ${phone} в течение 15 минут.`);
+        if (data.ok) {
+          alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
           event.target.reset();
         } else {
-          alert('❌ Ошибка отправки. Пожалуйста, напишите нам напрямую в Telegram.');
+          alert('❌ Произошла ошибка. Пожалуйста, свяжитесь с нами напрямую в Telegram.');
         }
       })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('❌ Ошибка отправки. Пожалуйста, напишите нам напрямую в Telegram.');
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
+      .catch(() => {
+        alert('❌ Произошла ошибка. Пожалуйста, свяжитесь с нами напрямую в Telegram.');
       });
     }
 
-    function submitPopup(event) {
-      event.preventDefault();
-      alert('Спасибо! Чек-лист отправлен на ваш email.');
-      closePopup();
-      event.target.reset();
-    }
-
-    // Callback widget
-    let callbackShown = false;
-    
-    function toggleCallback() {
-      const message = document.getElementById('callbackMessage');
-      message.classList.toggle('active');
-    }
-
-    // Show callback message after 30 seconds
-    setTimeout(() => {
-      if (!callbackShown) {
-        document.getElementById('callbackMessage').classList.add('active');
-        callbackShown = true;
-      }
-    }, 30000);
-
-    // Hide callback message after 10 seconds
-    setInterval(() => {
-      document.getElementById('callbackMessage').classList.remove('active');
-    }, 40000);
-
-    // Keyboard escape to close popup
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closePopup();
-      }
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
     });
   </script>
 </body>

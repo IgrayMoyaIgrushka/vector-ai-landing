@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vector AI — Автоматизация бизнес-процессов и Telegram-боты</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Разработка AI-агентов и Telegram-ботов для автоматизации бизнеса: обработка заявок, запись клиентов, поддержка и FAQ, интеграции с CRM и уведомления."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">V</div>
+      <div class="preloader-text">Vector AI</div>
+      <div class="preloader-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gradient">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <div class="page">
+    <header id="header">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-mark">V</div>
+          <div class="logo-text">
+            <div class="logo-title">Vector AI</div>
+            <div class="logo-sub">Автоматизация бизнес-процессов</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Услуги</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#process">Процесс</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Контакты</a>
+        </div>
+        <a href="https://t.me/VectorDev001" class="btn-primary">
+          Написать в Telegram
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="section hero" id="top">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            📈 Ваш бизнес на автопилоте
+          </div>
+          <h1 class="hero-title">
+            Разработка <span class="hero-gradient">AI‑агентов и телеграм‑ботов</span> для автоматизации процессов и клиентских коммуникаций
+          </h1>
+          <p class="hero-sub">
+            Создаём решения для бизнеса: AI‑агенты и Telegram‑боты для обработки заявок,
+            записи клиентов, поддержки и FAQ, интеграций с CRM и внутренними системами,
+            а также уведомлений и отчётности в режиме реального времени.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#form" class="btn-primary">
+              Оставить запрос
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+            <a href="#services" class="hero-secondary-link">
+              Услуги и решения
+              <span>AI‑агенты, телеграм‑боты, интеграции</span>
+            </a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>🎯 Фокус:</strong> автоматизация бизнес-процессов, AI‑агенты, Telegram‑боты</div>
+            <div><strong>📋 Формат:</strong> фиксированный объём и сроки, сопровождение по договорённости</div>
+            <div><strong>⚡ Скорость:</strong> запуск MVP от 3 дней, полный проект за 2-4 недели</div>
+            <div><strong>💰 Прозрачность:</strong> фиксированная цена, оплата по этапам без скрытых платежей</div>
+          </div>
+        </div>
+        <div class="hero-right reveal">
+          <div class="hero-card">
+            <div class="hero-glow"></div>
+            <div class="hero-card-header">
+              <div class="hero-card-title">Что можно автоматизировать уже сейчас</div>
+              <div class="hero-card-badge">Без сложной доработки инфраструктуры</div>
+            </div>
+            <div class="hero-card-body">
+              <ul>
+                <li>Запись к специалистам, напоминания и подтверждения</li>
+                <li>Сбор заявок с лендингов и форм в Telegram</li>
+                <li>AI‑агенты, которые отвечают на частые вопросы</li>
+                <li>Уведомления о событиях: оплаты, заявки, новые лиды</li>
+              </ul>
+            </div>
+            
+            <!-- Мини-кейсы с цифрами -->
+            <div class="hero-card-cases">
+              <div class="case-mini">
+                <div class="case-mini-icon">📩</div>
+                <div class="case-mini-content">
+                  <div class="case-mini-value">300+</div>
+                  <div class="case-mini-label">заявок в месяц обрабатывает бот</div>
+                  <div class="case-mini-desc">для клиники эстетической медицины</div>
+                </div>
+              </div>
+              <div class="case-mini">
+                <div class="case-mini-icon">🤖</div>
+                <div class="case-mini-content">
+                  <div class="case-mini-value">80%</div>
+                  <div class="case-mini-label">снизили нагрузку на поддержку</div>
+                  <div class="case-mini-desc">AI-агент отвечает на 8 из 10 вопросов</div>
+                </div>
+              </div>
+              <div class="case-mini">
+                <div class="case-mini-icon">⏰</div>
+                <div class="case-mini-content">
+                  <div class="case-mini-value">40 ч/мес</div>
+                  <div class="case-mini-label">экономит автоматизация записи</div>
+                  <div class="case-mini-desc">администратор больше не тратит время на рутину</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="hero-card-footer">
+              <div>⏱ Стартовые решения — от 1–2 недель</div>
+              <div class="hero-pill">Помогаем сформулировать задачу</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="section">
+        <div class="stats-bar reveal">
+          <div class="stat-item">
+            <div class="stat-value">50+</div>
+            <div class="stat-label">проектов реализовано</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">2 нед</div>
+            <div class="stat-label">средний срок запуска</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">работают наши боты</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">95%</div>
+            <div class="stat-label">клиентов рекомендуют нас</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY US -->
+      <section class="section" id="why">
+        <div class="section-header reveal">
+          <div class="section-header-left">
+            <div class="tag">Преимущества</div>
+            <h2 class="section-title">Почему выбирают Vector AI</h2>
+            <p class="section-kicker">
+              Мы не просто делаем ботов — мы создаём решения, которые приносят измеримую пользу бизнесу.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item reveal reveal-delay-1">
+            <div class="why-icon">⚡</div>
+            <h3 class="why-title">Быстрый запуск</h3>
+            <p class="why-text">Первый работающий прототип уже через 3 дня после старта. Полноценное решение — от 2 недель.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <div class="why-icon">🎯</div>
+            <h3 class="why-title">Фокус на результате</h3>
+            <p class="why-text">Не продаём технологии ради технологий. Делаем то, что решает ваши бизнес-задачи.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-3">
+            <div class="why-icon">🔒</div>
+            <h3 class="why-title">Надёжность и безопасность</h3>
+            <p class="why-text">Ваши данные под защитой. Работаем по договору, соблюдаем конфиденциальность.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-1">
+            <div class="why-icon">💰</div>
+            <h3 class="why-title">Прозрачное ценообразование</h3>
+            <p class="why-text">Фиксируем стоимость и сроки до начала работ. Никаких скрытых платежей.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <div class="why-icon">🤝</div>
+            <h3 class="why-title">Поддержка 24/7</h3>
+            <p class="why-text">Не бросаем после запуска. Обеспечиваем техническую поддержку и развитие решений.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-3">
+            <div class="why-icon">📊</div>
+            <h3 class="why-title">Измеримая польза</h3>
+            <p class="why-text">Предоставляем отчёты по экономии времени и увеличению конверсии после внедрения.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="section-header reveal">
+          <div class="section-header-left">
+            <div class="tag">Услуги</div>
+            <h2 class="section-title">AI‑агенты, телеграм‑боты и интеграции</h2>
+            <p class="section-kicker">
+              Проектируем и внедряем решения под задачи бизнеса. Можно начать с базового MVP
+              и последовательно развивать функциональность.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card reveal reveal-delay-1">
+            <div class="card-label">Бизнес‑боты</div>
+            <h3 class="card-title">Запись, заявки, воронки продаж</h3>
+            <p class="card-text">
+              Телеграм‑боты, которые берут на себя первичную коммуникацию: принимают заявки,
+              собирают контакты и структурируют данные для менеджеров.
+            </p>
+            <ul class="card-list">
+              <li>Запись к специалистам и онлайн‑бронирование</li>
+              <li>Анкеты и опросы для квалификации лидов</li>
+              <li>Сценарии продаж и допродаж в несколько шагов</li>
+            </ul>
+            <div class="card-footer">
+              <span>От прототипа до продакшена</span>
+              <span class="price-pill">по задаче</span>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-2">
+            <div class="card-label">AI‑агенты</div>
+            <h3 class="card-title">Интеллектуальные ассистенты</h3>
+            <p class="card-text">
+              AI‑агенты на базе современных моделей, которые работают с вашей базой знаний
+              и помогают клиентам и сотрудникам в типовых сценариях.
+            </p>
+            <ul class="card-list">
+              <li>Обработка FAQ и консультации по материалам</li>
+              <li>Помощь в подборе тарифов, услуг, продуктов</li>
+              <li>Генерация ответов, писем и сообщений</li>
+            </ul>
+            <div class="card-footer">
+              <span>Настройка промта и ограничений</span>
+              <span class="price-pill">индивидуально</span>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-3">
+            <div class="card-label">Интеграции</div>
+            <h3 class="card-title">Связь с CRM и сервисами</h3>
+            <p class="card-text">
+              Интегрируем ботов и агентов с существующей инфраструктурой, выстраиваем
+              автоматические сценарии обмена данными.
+            </p>
+            <ul class="card-list">
+              <li>Интеграция с CRM, Google Sheets, Notion</li>
+              <li>Автоматическая отправка уведомлений и отчётов</li>
+              <li>Поддержка уже работающих решений</li>
+            </ul>
+            <div class="card-footer">
+              <span>Поэтапное внедрение</span>
+              <span class="price-pill">на брифе</span>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <div class="card-label">Финансы</div>
+            <h3 class="card-title">Финансовый бот‑отчётник</h3>
+            <p class="card-text">
+              Бот, который собирает доходы и расходы в одном месте и сам присылает понятные отчёты в Telegram. Владельцу остаётся только принимать решения.
+            </p>
+            <ul class="card-list">
+              <li>Быстрый учёт денег без Excel и сложных таблиц</li>
+              <li>Ежедневные/еженедельные отчёты по выручке, расходам и прибыли</li>
+              <li>Понимание, куда уходят деньги и где можно сократить затраты</li>
+            </ul>
+            <div class="card-footer">
+              <span>Контроль финансов в реальном времени</span>
+              <span class="price-pill">от 15 000 ₽</span>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-2">
+            <div class="card-label">HR</div>
+            <h3 class="card-title">HR‑бот для смен и выплат</h3>
+            <p class="card-text">
+              Удобный бот для учёта рабочего времени, заявок сотрудников и расчёта выплат — прямо в Telegram, без бумажек и хаоса в чатах.
+            </p>
+            <ul class="card-list">
+              <li>Сотрудники сами отмечают начало и конец смены</li>
+              <li>Заявки на отпуск, выходные и переработки через бота</li>
+              <li>Автоматическая сводка по часам и выплатам для каждого сотрудника</li>
+            </ul>
+            <div class="card-footer">
+              <span>Для команд от 5 человек</span>
+              <span class="price-pill">от 12 000 ₽</span>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-3">
+            <div class="card-label">Операционка</div>
+            <h3 class="card-title">Операционный диспетчер‑бот</h3>
+            <p class="card-text">
+              Бот, который принимает заявки, превращает их в задачи и следит за дедлайнами, чтобы ничего не терялось в переписках.
+            </p>
+            <ul class="card-list">
+              <li>Приём заявок от клиентов и сотрудников в одном канале</li>
+              <li>Автоматическая постановка задач в Trello/Notion/таблицы</li>
+              <li>Напоминания о дедлайнах и контроль просроченных задач</li>
+            </ul>
+            <div class="card-footer">
+              <span>Интеграция с таск‑трекерами</span>
+              <span class="price-pill">от 18 000 ₽</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASES -->
+      <section class="section" id="cases">
+        <div class="section-header reveal">
+          <div class="section-header-left">
+            <div class="tag">Кейсы</div>
+            <h2 class="section-title">Типовые сценарии работы</h2>
+            <p class="section-kicker">
+              Несколько базовых сценариев, которые можно адаптировать под отрасль
+              и специфику вашей компании.
+            </p>
+          </div>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case reveal reveal-delay-1">
+            <div class="case-header">
+              <h3 class="case-title">Бот для записи и управления расписанием</h3>
+              <span class="case-tag">запись + напоминания</span>
+            </div>
+            <p class="case-text">
+              Клиент самостоятельно выбирает время, оставляет контакты, получает
+              подтверждение и напоминания. Ответственный видит всю нагрузку в Telegram.
+            </p>
+            <ul class="case-list">
+              <li>Снижение нагрузки на менеджеров</li>
+              <li>Напоминания и подтверждения визитов</li>
+              <li>Сводка записей за день/неделю</li>
+            </ul>
+            <div class="case-meta">
+              <span>🏥 Услуги, медицина, образование</span>
+              <span>📈 Масштабируется на сеть филиалов</span>
+            </div>
+          </article>
+
+          <article class="case reveal reveal-delay-2">
+            <div class="case-header">
+              <h3 class="case-title">AI‑агент‑консультант по продукту</h3>
+              <span class="case-tag">поддержка + лиды</span>
+            </div>
+            <p class="case-text">
+              Агент отвечает на частые вопросы, работает с материалами компании и
+              передаёт подготовленных клиентов в отдел продаж.
+            </p>
+            <ul class="case-list">
+              <li>Круглосуточная обработка запросов</li>
+              <li>Поддержка на нескольких языках</li>
+              <li>Передача данных в CRM или Telegram</li>
+            </ul>
+            <div class="case-meta">
+              <span>💻 SaaS, онлайн‑сервисы</span>
+              <span>⚙️ Гибкая настройка под регламенты</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="section" id="process">
+        <div class="section-header reveal">
+          <div class="section-header-left">
+            <div class="tag">Процесс</div>
+            <h2 class="section-title">Как мы работаем</h2>
+            <p class="section-kicker">
+              Чёткий процесс от заявки до результата — прозрачно и в срок
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal reveal-delay-1">
+            <div class="step-num">01</div>
+            <div class="step-title">Анализ задачи</div>
+            <p>Обсуждаем требования и цели проекта. Подбираем оптимальное решение под ваши задачи.</p>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step-num">02</div>
+            <div class="step-title">Оценка и договорённости</div>
+            <p>Фиксируем сроки, бюджет и этапы работы. Согласуем техническое задание.</p>
+          </div>
+          <div class="step reveal reveal-delay-3">
+            <div class="step-num">03</div>
+            <div class="step-title">Разработка и тестирование</div>
+            <p>Создаём решение, подключаем интеграции, тестируем на реальных сценариях.</p>
+          </div>
+          <div class="step reveal reveal-delay-4">
+            <div class="step-num">04</div>
+            <div class="step-title">Запуск и поддержка</div>
+            <p>Запускаем проект, передаём доступы. Обеспечиваем техническую поддержку.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header reveal">
+          <div class="section-header-left">
+            <div class="tag">FAQ</div>
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item reveal reveal-delay-1">
+            <div class="faq-q">От чего зависит стоимость проекта?</div>
+            <div class="faq-a">
+              Бюджет определяется сложностью сценариев, количеством интеграций и требованиями к надёжности и масштабируемости. Базовую вилку цен озвучиваем после брифа.
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <div class="faq-q">Какие сроки внедрения?</div>
+            <div class="faq-a">
+              Стартовые решения по типовым сценариям обычно занимают от 1–2 недель. Для комплексных проектов сроки рассчитываются индивидуально.
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <div class="faq-q">Нужны ли собственные сервера?</div>
+            <div class="faq-a">
+              Возможны варианты: использование облачных платформ или развёртывание на ��ашем VPS. Рекомендуем подход в зависимости от нагрузки и требований по безопасности.
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <div class="faq-q">Можете ли вы доработать уже существующего бота?</div>
+            <div class="faq-a">
+              Да, мы можем провести аудит текущего решения, предложить оптимизации и аккуратно доработать функциональность при наличии доступа к коду и токенам.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORM -->
+      <section class="section" id="form">
+        <div class="form-section reveal">
+          <h3 class="form-title">📋 Получить бесплатную консультацию</h3>
+          <p class="form-subtitle">Оставьте заявку — мы свяжемся в течение 15 минут и обсудим ваш проект</p>
+          
+          <form class="form-grid" onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label for="name">Ваше имя *</label>
+              <input type="text" id="name" name="name" required placeholder="Иван Петров">
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 000-00-00">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="example@mail.ru">
+            </div>
+            <div class="form-group">
+              <label for="company">Название компании</label>
+              <input type="text" id="company" name="company" placeholder="ООО «Вектор»">
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Опишите задачу *</label>
+              <textarea id="message" name="message" required placeholder="Какие процессы хотите автоматизировать?"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn-primary">
+                Отправить заявку
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+              <button type="button" class="btn-secondary" onclick="openPopup()">
+                🎁 Получить чек-лист
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="contact reveal">
+          <div class="contact-text">
+            <p><strong>Рассматриваете автоматизацию на базе AI‑агентов и Telegram‑ботов?</strong></p>
+            <p>
+              Отправьте нам краткое описание задачи в Telegram — мы вернёмся с предложением
+              по возможному решению, срокам и ориентировочному бюджету.
+            </p>
+            <p class="contact-note">
+              На первом этапе достаточно описать текущий процесс и желаемый результат —
+              остальное мы поможем структурировать.
+            </p>
+          </div>
+          <a href="https://t.me/VectorDev001" class="btn-primary">
+            Написать в Telegram
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Vector AI — Интеллектуальная автоматизация и телеграм-боты.</p>
+      <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">Не является публичной офертой.</p>
+    </footer>
+
+    <!-- POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup">
+        <button class="popup-close" onclick="closePopup()">×</button>
+        <div class="popup-icon">🎁</div>
+        <h3 class="popup-title">Получите чек-лист бесплатно</h3>
+        <p class="popup-subtitle">«5 процессов, которые можно автоматизировать уже сегодня» — сэкономьте до 20 часов в неделю</p>
+        <ul class="popup-benefits">
+          <li>Список процессов для автоматизации</li>
+          <li>Оценка экономии для каждого процесса</li>
+          <li>Примеры внедрения с цифрами</li>
+          <li>Чек-лист выбора подрядчика</li>
+        </ul>
+        <form class="popup-form" onsubmit="submitPopup(event)">
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="tel" placeholder="Телефон" required>
+          <input type="email" placeholder="Email" required>
+          <button type="submit" class="btn-primary">
+            Получить чек-лист
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </form>
+        <p class="popup-note">Нажимаю кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+      </div>
+    </div>
+
+    <!-- CALLBACK WIDGET -->
+    <div class="callback-widget">
+      <div class="callback-message" id="callbackMessage">
+        <strong>Нужна помощь?</strong>
+        Оставьте заявку — перезвоним через 5 минут!
+      </div>
+      <button class="callback-btn" onclick="toggleCallback()" title="Заказать звонок">
+        📞
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Reveal on scroll
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      const preloaderContent = preloader.querySelector('.preloader-content');
+      
+      // Ждём 0.8 секунды для показа логотипа
+      setTimeout(() => {
+        // Сначала скрываем контент (логотип и текст)
+        preloaderContent.style.opacity = '0';
+        preloaderContent.style.transform = 'scale(1.1)';
+        
+        // Через 0.3 секунды начинаем раздвигать шторы
+        setTimeout(() => {
+          preloader.classList.add('loaded');
+          
+          // Полностью удаляем прелоадер после завершения анимации
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 800);
+        }, 300);
+      }, 800);
+    });
+
+    // Popup functions
+    function openPopup() {
+      document.getElementById('popupOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+      document.getElementById('popupOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('popupOverlay')?.addEventListener('click', (e) => {
+      if (e.target === document.getElementById('popupOverlay')) {
+        closePopup();
+      }
+    });
+
+    // Form submissions - отправляем данные на наш сервер
+    // Для локальной разработки: http://localhost:3000/api/send-lead
+    // Для production: укажите ваш URL на Render
+    const API_URL = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/api/send-lead' 
+      : '/api/send-lead';
+
+    function submitForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const company = document.getElementById('company').value;
+      const message = document.getElementById('message').value;
+
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+
+      // Показываем что отправляется
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '⏳ Отправка...';
+
+      // Отправляем данные на наш сервер
+      fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, company, message })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(`✅ Спасибо, ${name}! Заявка отправлена.\nМы свяжемся с вами по номеру ${phone} в течение 15 минут.`);
+          event.target.reset();
+        } else {
+          alert('❌ Ошибка отправки. Пожалуйста, напишите нам напрямую в Telegram.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('❌ Ошибка отправки. Пожалуйста, напишите нам напрямую в Telegram.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      });
+    }
+
+    function submitPopup(event) {
+      event.preventDefault();
+      alert('Спасибо! Чек-лист отправлен на ваш email.');
+      closePopup();
+      event.target.reset();
+    }
+
+    // Callback widget
+    let callbackShown = false;
+    
+    function toggleCallback() {
+      const message = document.getElementById('callbackMessage');
+      message.classList.toggle('active');
+    }
+
+    // Show callback message after 30 seconds
+    setTimeout(() => {
+      if (!callbackShown) {
+        document.getElementById('callbackMessage').classList.add('active');
+        callbackShown = true;
+      }
+    }, 30000);
+
+    // Hide callback message after 10 seconds
+    setInterval(() => {
+      document.getElementById('callbackMessage').classList.remove('active');
+    }, 40000);
+
+    // Keyboard escape to close popup
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePopup();
+      }
+    });
+  </script>
+</body>
+</html>
