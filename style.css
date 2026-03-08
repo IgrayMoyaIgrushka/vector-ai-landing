@@ -1184,6 +1184,9 @@ header.scrolled {
 
 .price-usd {
   display: none;
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 12px;
 }
 
 /* Показываем USD цены только в EN версии */
