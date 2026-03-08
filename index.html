@@ -94,7 +94,7 @@
               </a>
               <a href="#services" class="hero-secondary-link">
                 <span data-lang-ru="Посмотреть готовые решения" data-lang-en="View Ready Solutions">Посмотреть готовые решения</span>
-                <span>Финансы / HR / Операционка</span>
+                <span data-lang-ru="Финансы / HR / Операционка" data-lang-en="Finance / HR / Operations">Финансы / HR / Операционка</span>
               </a>
             </div>
             <div class="hero-meta">
@@ -151,7 +151,7 @@
               <div class="case-mini">
                 <div class="case-mini-icon">⏰</div>
                 <div class="case-mini-content">
-                  <div class="case-mini-value">40 ч/мес</div>
+                  <div class="case-mini-value" data-lang-ru="40 ч/мес" data-lang-en="40 hrs/month">40 ч/мес</div>
                   <div class="case-mini-label" data-lang-ru="экономит автоматизация записи" data-lang-en="saved by appointment automation">экономит автоматизация записи</div>
                   <div class="case-mini-desc" data-lang-ru="администратор больше не тратит время на рутину" data-lang-en="administrator no longer wastes time on routine">администратор больше не тратит время на рутину</div>
                 </div>
@@ -377,6 +377,13 @@
             if (innerSpan) {
               innerSpan.textContent = text;
             }
+          } else if (el.children.length > 0) {
+            // Element has child nodes - only update text nodes, not children
+            el.childNodes.forEach(node => {
+              if (node.nodeType === Node.TEXT_NODE) {
+                node.textContent = text;
+              }
+            });
           } else {
             el.textContent = text;
           }
