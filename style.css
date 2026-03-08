@@ -960,6 +960,18 @@ header.scrolled {
   line-height: 1.5;
 }
 
+.card-result {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  border-left: 2px solid var(--accent-primary);
+  background: rgba(212, 165, 116, 0.05);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
 .card-list {
   list-style: none;
   display: grid;
