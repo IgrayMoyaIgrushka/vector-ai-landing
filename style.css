@@ -77,6 +77,29 @@ body {
   min-height: 100vh;
 }
 
+/* Заголовки — Space Grotesk */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.card-title,
+.case-card-title,
+.contact-title,
+.form-title,
+.step-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Цифры и метрики — Space Grotesk */
+.case-card-value,
+.case-mini-value,
+.stat-value,
+.step-num,
+.price-pill {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.03em;
+}
+
 /* ========================================
    BACKGROUND EFFECTS
    ======================================== */
