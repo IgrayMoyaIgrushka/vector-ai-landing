@@ -1182,6 +1182,19 @@ header.scrolled {
   margin-top: 2px;
 }
 
+.price-usd {
+  display: none;
+}
+
+/* Показываем USD цены только в EN версии */
+html[lang="en"] .price-rub {
+  display: none;
+}
+
+html[lang="en"] .price-usd {
+  display: inline;
+}
+
 /* ========================================
    CASES SECTION
    ======================================== */
