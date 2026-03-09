@@ -1197,7 +1197,15 @@ html[lang="en"] .price-rub {
   display: none;
 }
 
+html[lang="en"] .price-sub {
+  display: none;
+}
+
 html[lang="en"] .price-usd {
+  display: inline;
+}
+
+html[lang="en"] .price-usd .price-sub {
   display: inline;
 }
 
