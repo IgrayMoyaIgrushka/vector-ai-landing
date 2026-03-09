@@ -1172,6 +1172,11 @@ header.scrolled {
   font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.2;
 }
 
 .price-pill .price-sub {
@@ -1182,6 +1187,10 @@ header.scrolled {
   margin-top: 2px;
 }
 
+.price-rub {
+  display: inline;
+}
+
 .price-usd {
   display: none;
 }
@@ -1190,6 +1199,7 @@ header.scrolled {
   color: var(--text-muted);
   font-weight: 400;
   font-size: 12px;
+  display: block;
 }
 
 /* Показываем USD цены только в EN версии */
