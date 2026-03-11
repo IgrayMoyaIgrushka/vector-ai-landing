@@ -1902,31 +1902,42 @@ footer {
 }
 
 /* Shine effect on cards */
+.card,
+.case-card,
+.step {
+  overflow: hidden;
+}
+
 .card::after,
 .case-card::after,
 .step::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.02) 20%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0.02) 80%,
-    transparent 100%
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.03) 60%,
+    transparent 70%
   );
-  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(30deg) translate(-150%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  filter: blur(20px);
 }
 
 .card:hover::after,
 .case-card:hover::after,
 .step:hover::after {
-  left: 100%;
+  transform: rotate(30deg) translate(50%, 50%);
+  opacity: 1;
+  transition: opacity 0.4s ease 0.1s, transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Pulse animation for CTA buttons */
