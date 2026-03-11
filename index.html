@@ -67,9 +67,49 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </a>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
     </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <div class="logo-mark logo-mark-sm">V</div>
+        <div class="logo-text">
+          <div class="logo-title">Vector AI</div>
+          <div class="logo-sub">Автоматизация бизнес-процессов</div>
+        </div>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Закрыть">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu-links">
+        <a href="#services" onclick="toggleMobileMenu()" data-lang-ru="Услуги" data-lang-en="Services">Услуги</a>
+        <a href="#process" onclick="toggleMobileMenu()" data-lang-ru="Процесс" data-lang-en="Process">Процесс</a>
+        <a href="#contact" onclick="toggleMobileMenu()" data-lang-ru="Контакты" data-lang-en="Contact">Контакты</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <button class="lang-switch lang-switch-mobile" onclick="toggleLanguage()">
+          <span class="lang-active">RU</span>
+          <span class="lang-separator">/</span>
+          <span class="lang-inactive">EN</span>
+        </button>
+        <a href="https://t.me/VectorDev001" class="btn-primary btn-primary-full" onclick="toggleMobileMenu()">
+          <span data-lang-ru="Написать в Telegram" data-lang-en="Write on Telegram">Написать в Telegram</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
 
     <main>
       <!-- HERO -->
@@ -406,6 +446,13 @@
         </div>
       </div>
     </footer>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Наверх">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+      </svg>
+    </button>
   </div>
 
   <script>
@@ -516,6 +563,107 @@
           if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
+        }
+      });
+    });
+
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('active');
+      mobileMenuOverlay.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
+
+    // Parallax effect for background elements
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const orbs = document.querySelectorAll('.glow-orb');
+      const particles = document.querySelector('.data-particles');
+      const grid = document.querySelector('.grid-overlay');
+
+      orbs.forEach((orb, index) => {
+        const speed = 0.1 + (index * 0.05);
+        orb.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+
+      if (particles) {
+        particles.style.transform = `translateY(${scrolled * 0.05}px)`;
+      }
+
+      if (grid) {
+        grid.style.transform = `translateY(${scrolled * 0.02}px)`;
+      }
+    });
+
+    // Enhanced reveal animation with stagger
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Add floating animation to cards on hover
+    document.querySelectorAll('.card, .case-card, .step').forEach(el => {
+      el.addEventListener('mouseenter', function() {
+        this.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease';
+      });
+    });
+
+    // Add glow effect on card hover
+    document.querySelectorAll('.card, .hero-card').forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const glow = this.querySelector('.hero-glow');
+        if (glow) {
+          glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(212, 165, 116, 0.15), transparent 60%)`;
+        }
+      });
+
+      card.addEventListener('mouseleave', function() {
+        const glow = this.querySelector('.hero-glow');
+        if (glow) {
+          glow.style.background = 'radial-gradient(circle at 30% 20%, rgba(212, 165, 116, 0.1), transparent 60%)';
         }
       });
     });
