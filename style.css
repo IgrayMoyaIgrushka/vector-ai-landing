@@ -626,44 +626,6 @@ header.scrolled {
   visibility: visible;
 }
 
-/* ========================================
-   DOG GIF EASTER EGG
-   ======================================== */
-
-.dog-gif-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  pointer-events: none;
-}
-
-.dog-gif {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  animation: dogFloat 3s ease-in-out infinite;
-}
-
-@keyframes dogFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(2deg); }
-}
-
-@media (max-width: 768px) {
-  .dog-gif {
-    width: 45px;
-    height: 45px;
-  }
-
-  .dog-gif-container {
-    top: 15px;
-    right: 15px;
-  }
-}
-
 .mobile-menu {
   position: fixed;
   top: 0;
