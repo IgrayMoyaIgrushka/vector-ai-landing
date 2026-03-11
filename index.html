@@ -646,27 +646,6 @@
         this.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease';
       });
     });
-
-    // Add glow effect on card hover
-    document.querySelectorAll('.card, .hero-card').forEach(card => {
-      card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const glow = this.querySelector('.hero-glow');
-        if (glow) {
-          glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(212, 165, 116, 0.15), transparent 60%)`;
-        }
-      });
-
-      card.addEventListener('mouseleave', function() {
-        const glow = this.querySelector('.hero-glow');
-        if (glow) {
-          glow.style.background = 'radial-gradient(circle at 30% 20%, rgba(212, 165, 116, 0.1), transparent 60%)';
-        }
-      });
-    });
   </script>
 </body>
 </html>
