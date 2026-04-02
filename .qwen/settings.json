@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(vector-ai-bot.onrender.com)"
+    ]
+  },
+  "$version": 3
+}
