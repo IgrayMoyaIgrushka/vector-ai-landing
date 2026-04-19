@@ -385,7 +385,16 @@ h1, h2, h3, h4, h5, h6,
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+#top { order: 1; }
+#cases { order: 2; }
+#services { order: 3; }
+#portfolio { order: 4; }
+#process { order: 5; }
+#contact { order: 6; }
 
 .section {
   max-width: var(--max-width);
@@ -1887,6 +1896,13 @@ header.scrolled {
   font-style: italic;
 }
 
+.contact-cta-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 /* ========================================
    FOOTER
    ======================================== */
@@ -1993,9 +2009,13 @@ footer {
   transform: translateY(-3px);
 }
 
+.mobile-sticky-cta {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 20px;
+    bottom: 86px;
     right: 20px;
     width: 45px;
     height: 45px;
@@ -2386,6 +2406,29 @@ textarea:focus-visible {
 
   .case-mini-icon {
     margin-bottom: 12px;
+  }
+
+  .mobile-sticky-cta {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: var(--radius-full);
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.45);
+  }
+
+  body {
+    padding-bottom: 84px;
   }
 }
 
