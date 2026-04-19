@@ -902,7 +902,7 @@ header.scrolled {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
 }
 
 .hero-secondary-link {
@@ -934,6 +934,12 @@ header.scrolled {
   background: var(--accent-glow);
   color: var(--accent-primary);
   width: fit-content;
+}
+
+.hero-trust-note {
+  margin: 0 0 28px;
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 .hero-meta {
@@ -1363,44 +1369,9 @@ header.scrolled {
   line-height: 1.2;
 }
 
-.price-pill .price-sub {
-  font-size: 10px;
-  font-weight: 500;
-  opacity: 0.8;
-  display: block;
-  margin-top: 2px;
-}
-
-.price-rub {
-  display: inline;
-}
-
-.price-usd {
-  display: none;
-}
-
-.price-usd-value {
-  color: var(--text-muted);
-  font-weight: 400;
-  font-size: 12px;
-  display: block;
-}
-
-/* Показываем USD цены только в EN версии */
-html[lang="en"] .price-rub {
-  display: none;
-}
-
-html[lang="en"] .price-sub {
-  display: none;
-}
-
-html[lang="en"] .price-usd {
-  display: inline;
-}
-
-html[lang="en"] .price-usd .price-sub {
-  display: inline;
+.price-label {
+  display: inline-block;
+  text-align: center;
 }
 
 /* ========================================
