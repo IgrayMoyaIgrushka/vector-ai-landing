@@ -702,6 +702,10 @@
               innerSpan.textContent = text;
             }
           } else if (el.children.length > 0) {
+            // If child elements have their own translations, do not overwrite parent text nodes.
+            if (el.querySelector('[data-lang-ru]')) {
+              return;
+            }
             // Element has child nodes - only update text nodes, not children
             el.childNodes.forEach(node => {
               if (node.nodeType === Node.TEXT_NODE) {
