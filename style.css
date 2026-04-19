@@ -385,7 +385,16 @@ h1, h2, h3, h4, h5, h6,
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+#top { order: 1; }
+#services { order: 2; }
+#cases { order: 3; }
+#process { order: 4; }
+#portfolio { order: 5; }
+#contact { order: 6; }
 
 .section {
   max-width: var(--max-width);
