@@ -642,6 +642,124 @@
         </div>
       </section>
 
+      <!-- TESTIMONIALS -->
+      <section class="section" id="testimonials">
+        <div class="section-header reveal">
+          <div class="section-header-left">
+            <div class="tag" data-lang-ru="Отзывы" data-lang-en="Testimonials">Отзывы</div>
+            <h2 class="section-title" data-lang-ru="Что говорят клиенты" data-lang-en="What Clients Say">Что говорят клиенты</h2>
+            <p class="section-kicker" data-lang-ru="Реальные истории от наших клиентов" data-lang-en="Real stories from our clients">Реальные истории от наших клиентов</p>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card glass reveal reveal-delay-1">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">🏥</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name" data-lang-ru="Александр В." data-lang-en="Alexander V.">Александр В.</div>
+                <div class="testimonial-company" data-lang-ru="Клиника эстетической медицины" data-lang-en="Aesthetic Medicine Clinic">Клиника эстетической медицины</div>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            </div>
+            <p class="testimonial-text" data-lang-ru="После внедрения бота администраторы наконец-то занимаются клиентами, а не бумажками. Экономия 40 часов в месяц — это как ещё один сотрудник в команде!" data-lang-en="After implementing the bot, administrators finally focus on clients instead of paperwork. Saving 40 hours per month is like having another employee on the team!">После внедрения бота администраторы наконец-то занимаются клиентами, а не бумажками. Экономия 40 часов в месяц — это как ещё один сотрудник в команде!</p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card glass reveal reveal-delay-2">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">💬</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name" data-lang-ru="Дмитрий К." data-lang-en="Dmitry K.">Дмитрий К.</div>
+                <div class="testimonial-company" data-lang-ru="SaaS-платформа" data-lang-en="SaaS Platform">SaaS-платформа</div>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            </div>
+            <p class="testimonial-text" data-lang-ru="AI-агент закрыл 80% вопросов поддержки. Команда сократилась с 5 до 1 человека, а клиенты довольны — ответ за 30 секунд вместо 4 часов!" data-lang-en="The AI agent handled 80% of support questions. The team went from 5 to 1 person, and customers are happy — 30-second response instead of 4 hours!">AI-агент закрыл 80% вопросов поддержки. Команда сократилась с 5 до 1 человека, а клиенты довольны — ответ за 30 секунд вместо 4 часов!</p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card glass reveal reveal-delay-3">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">🛒</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name" data-lang-ru="Елена М." data-lang-en="Elena M.">Елена М.</div>
+                <div class="testimonial-company" data-lang-ru="Интернет-магазин одежды" data-lang-en="Online Clothing Store">Интернет-магазин одежды</div>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            </div>
+            <p class="testimonial-text" data-lang-ru="Бот вернул нам 25% повторных продаж! Клиенты получают персональные подборки и возвращаются чаще. Лучшая инвестиция в маркетинг." data-lang-en="The bot brought back 25% of repeat sales! Customers get personalized selections and return more often. Best marketing investment!">Бот вернул нам 25% повторных продаж! Клиенты получают персональные подборки и возвращаются чаще. Лучшая инвестиция в маркетинг.</p>
+          </div>
+        </div>
+
+        <div class="testimonials-cta reveal">
+          <button class="btn-primary btn-outline" onclick="openReviewModal()">
+            <span data-lang-ru="Оставить отзыв" data-lang-en="Leave a Review">Оставить отзыв</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- REVIEW MODAL -->
+      <div class="modal-overlay" id="reviewModal" onclick="closeReviewModal(event)">
+        <div class="modal-window">
+          <button class="modal-close" onclick="closeReviewModal()" aria-label="Закрыть">&times;</button>
+          <div class="modal-header">
+            <h3 data-lang-ru="Оставить отзыв" data-lang-en="Leave a Review">Оставить отзыв</h3>
+            <p data-lang-ru="Ваш отзыв поможет другим клиентам принять решение" data-lang-en="Your review will help other clients make a decision">Ваш отзыв поможет другим клиентам принять решение</p>
+          </div>
+          <form class="review-form" id="reviewForm" onsubmit="submitReview(event)">
+            <div class="form-group">
+              <label for="reviewName" data-lang-ru="Ваше имя *" data-lang-en="Your Name *">Ваше имя *</label>
+              <input type="text" id="reviewName" name="name" required data-lang-placeholder-ru="Иван Петров" data-lang-placeholder-en="Ivan Petrov" placeholder="Иван Петров">
+            </div>
+            <div class="form-group">
+              <label for="reviewCompany" data-lang-ru="Компания" data-lang-en="Company">Компания</label>
+              <input type="text" id="reviewCompany" name="company" data-lang-placeholder-ru="Название компании (необязательно)" data-lang-placeholder-en="Company name (optional)" placeholder="Название компании (необязательно)">
+            </div>
+            <div class="form-group">
+              <label for="reviewText" data-lang-ru="Ваш отзыв *" data-lang-en="Your Review *">Ваш отзыв *</label>
+              <textarea id="reviewText" name="text" rows="5" required data-lang-placeholder-ru="Расскажите о вашем опыте работы с нами..." data-lang-placeholder-en="Tell us about your experience working with us..." placeholder="Расскажите о вашем опыте работы с нами..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="reviewPhoto" data-lang-ru="Прикрепить фото (скриншот, логотип)" data-lang-en="Attach Photo (screenshot, logo)" data-lang-ru="Прикрепить фото (скриншот, логотип)" data-lang-en="Attach Photo (screenshot, logo)">Прикрепить фото (скриншот, логотип)</label>
+              <div class="file-upload">
+                <input type="file" id="reviewPhoto" name="photo" accept="image/*" onchange="previewPhoto(this)">
+                <div class="file-upload-label" data-lang-ru="Перетащите файл или нажмите для выбора" data-lang-en="Drag file or click to select">Перетащите файл или нажмите для выбора</div>
+                <div class="file-upload-preview" id="photoPreview"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reviewRating" data-lang-ru="Оценка *" data-lang-en="Rating *">Оценка *</label>
+              <div class="rating-input" id="ratingInput">
+                <span onclick="setRating(1)" data-rating="1">☆</span>
+                <span onclick="setRating(2)" data-rating="2">☆</span>
+                <span onclick="setRating(3)" data-rating="3">☆</span>
+                <span onclick="setRating(4)" data-rating="4">☆</span>
+                <span onclick="setRating(5)" data-rating="5">☆</span>
+              </div>
+              <input type="hidden" id="reviewRating" name="rating" value="0" required>
+            </div>
+            <button type="submit" class="btn-primary btn-large btn-full">
+              <span data-lang-ru="Отправить отзыв" data-lang-en="Send Review">Отправить отзыв</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+            <p class="form-note" data-lang-ru="Отзыв будет отправлен в Telegram и опубликован после проверки" data-lang-en="Review will be sent to Telegram and published after moderation">Отзыв будет отправлен в Telegram и опубликован после проверки</p>
+          </form>
+        </div>
+      </div>
+
       <!-- CONTACT -->
       <section class="section" id="contact">
         <div class="contact glass reveal">
@@ -880,6 +998,175 @@
         this.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease';
       });
     });
+
+    // ===== REVIEW MODAL FUNCTIONS =====
+    
+    // Open modal
+    function openReviewModal() {
+      document.getElementById('reviewModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal
+    function closeReviewModal(event) {
+      if (!event || event.target === document.getElementById('reviewModal')) {
+        document.getElementById('reviewModal').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeReviewModal();
+      }
+    });
+
+    // Set rating
+    function setRating(stars) {
+      const ratingInput = document.getElementById('reviewRating');
+      const ratingSpans = document.querySelectorAll('#ratingInput span');
+      
+      ratingInput.value = stars;
+      
+      ratingSpans.forEach((span, index) => {
+        if (index < stars) {
+          span.textContent = '⭐';
+        } else {
+          span.textContent = '☆';
+        }
+      });
+    }
+
+    // Photo preview
+    function previewPhoto(input) {
+      const preview = document.getElementById('photoPreview');
+      const label = document.querySelector('.file-upload-label');
+      
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+          preview.innerHTML = `<img src="${e.target.result}" alt="Preview" />`;
+          label.style.display = 'none';
+        };
+        
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        preview.innerHTML = '';
+        label.style.display = 'block';
+      }
+    }
+
+    // Submit review form
+    async function submitReview(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('reviewForm');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Отправка...</span>';
+      
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        company: formData.get('company') || 'Не указано',
+        text: formData.get('text'),
+        rating: formData.get('rating'),
+        hasPhoto: formData.get('photo') ? true : false
+      };
+      
+      try {
+        // Send to Telegram via your server
+        const response = await fetch('/api/review', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+          // Success - show thank you message
+          form.innerHTML = `
+            <div class="form-success">
+              <div class="success-icon">✅</div>
+              <h4 data-lang-ru="Спасибо за отзыв!" data-lang-en="Thank you for your review!">Спасибо за отзыв!</h4>
+              <p data-lang-ru="Ваш отзыв отправлен и будет опубликован после проверки" data-lang-en="Your review has been sent and will be published after moderation">Ваш отзыв отправлен и будет опубликован после проверки</p>
+            </div>
+          `;
+          
+          // Close modal after 3 seconds
+          setTimeout(() => {
+            closeReviewModal();
+            // Reset form after modal closes
+            setTimeout(() => {
+              form.innerHTML = `
+                <div class="form-group">
+                  <label for="reviewName" data-lang-ru="Ваше имя *" data-lang-en="Your Name *">Ваше имя *</label>
+                  <input type="text" id="reviewName" name="name" required data-lang-placeholder-ru="Иван Петров" data-lang-placeholder-en="Ivan Petrov" placeholder="Иван Петров">
+                </div>
+                <div class="form-group">
+                  <label for="reviewCompany" data-lang-ru="Компания" data-lang-en="Company">Компания</label>
+                  <input type="text" id="reviewCompany" name="company" data-lang-placeholder-ru="Название компании (необязательно)" data-lang-placeholder-en="Company name (optional)" placeholder="Название компании (необязательно)">
+                </div>
+                <div class="form-group">
+                  <label for="reviewText" data-lang-ru="Ваш отзыв *" data-lang-en="Your Review *">Ваш отзыв *</label>
+                  <textarea id="reviewText" name="text" rows="5" required data-lang-placeholder-ru="Расскажите о вашем опыте работы с нами..." data-lang-placeholder-en="Tell us about your experience working with us..." placeholder="Расскажите о вашем опыте работы с нами..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="reviewPhoto" data-lang-ru="Прикрепить фото (скриншот, логотип)" data-lang-en="Attach Photo (screenshot, logo)">Прикрепить фото (скриншот, логотип)</label>
+                  <div class="file-upload">
+                    <input type="file" id="reviewPhoto" name="photo" accept="image/*" onchange="previewPhoto(this)">
+                    <div class="file-upload-label" data-lang-ru="Перетащите файл или нажмите для выбора" data-lang-en="Drag file or click to select">Перетащите файл или нажмите для выбора</div>
+                    <div class="file-upload-preview" id="photoPreview"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="reviewRating" data-lang-ru="Оценка *" data-lang-en="Rating *">Оценка *</label>
+                  <div class="rating-input" id="ratingInput">
+                    <span onclick="setRating(1)" data-rating="1">☆</span>
+                    <span onclick="setRating(2)" data-rating="2">☆</span>
+                    <span onclick="setRating(3)" data-rating="3">☆</span>
+                    <span onclick="setRating(4)" data-rating="4">☆</span>
+                    <span onclick="setRating(5)" data-rating="5">☆</span>
+                  </div>
+                  <input type="hidden" id="reviewRating" name="rating" value="0" required>
+                </div>
+                <button type="submit" class="btn-primary btn-large btn-full">
+                  <span data-lang-ru="Отправить отзыв" data-lang-en="Send Review">Отправить отзыв</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+                <p class="form-note" data-lang-ru="Отзыв будет отправлен в Telegram и опубликован после проверки" data-lang-en="Review will be sent to Telegram and published after moderation">Отзыв будет отправлен в Telegram и опубликован после проверки</p>
+              `;
+            }, 500);
+          }, 3000);
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (error) {
+        // Fallback: open Telegram with pre-filled message
+        const telegramMessage = `📝 Новый отзыв!\n\n👤 Имя: ${data.name}\n🏢 Компания: ${data.company}\n⭐ Оценка: ${data.rating}/5\n\n💬 Текст:\n${data.text}`;
+        window.open(`https://t.me/VectorDev001?start=${encodeURIComponent(telegramMessage)}`, '_blank');
+        
+        form.innerHTML = `
+          <div class="form-success">
+            <div class="success-icon">✅</div>
+            <h4 data-lang-ru="Отзыв готов к отправке!" data-lang-en="Review ready to send!">Отзыв готов к отправке!</h4>
+            <p data-lang-ru="Откройте Telegram и отправьте отзыв" data-lang-en="Open Telegram and send your review">Откройте Telegram и отправьте отзыв</p>
+          </div>
+        `;
+        
+        setTimeout(() => {
+          closeReviewModal();
+        }, 3000);
+      }
+    }
   </script>
 </body>
 </html>

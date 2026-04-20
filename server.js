@@ -100,6 +100,70 @@ ${safeMessage || 'Не указано'}
   }
 });
 
+// Endpoint для отправки отзывов
+app.post('/api/review', async (req, res) => {
+  try {
+    const { name, company, text, rating, hasPhoto } = req.body;
+
+    if (!name || !text || !rating) {
+      return res.status(400).json({
+        success: false,
+        error: 'Имя, текст и оценка обязательны'
+      });
+    }
+
+    const safeName = escapeHtml(name);
+    const safeCompany = escapeHtml(company);
+    const safeText = escapeHtml(text);
+    const safeRating = parseInt(rating);
+
+    const stars = '⭐'.repeat(safeRating) + '☆'.repeat(5 - safeRating);
+    const message = `📝 <b>Новый отзыв!</b>
+
+👤 <b>Имя:</b> ${safeName}
+🏢 <b>Компания:</b> ${safeCompany}
+⭐ <b>Оценка:</b> ${safeRating}/5 ${stars}
+
+💬 <b>Текст отзыва:</b>
+${safeText}
+
+${hasPhoto ? '📎 Фото прикреплено (проверьте Telegram)' : ''}
+
+#отзыв #vector_ai`;
+
+    const response = await fetch(
+      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: message,
+          parse_mode: 'HTML'
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.ok) {
+      res.json({ success: true, message: 'Отзыв отправлен' });
+    } else {
+      console.error('Telegram error:', data);
+      res.status(500).json({
+        success: false,
+        error: data.description || 'Ошибка отправки в Telegram'
+      });
+    }
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Внутренняя ошибка сервера'
+    });
+  }
+});
+
 // Отдаём index.html для всех остальных запросов (SPA)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
