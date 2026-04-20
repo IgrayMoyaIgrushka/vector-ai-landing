@@ -1583,6 +1583,26 @@ header.scrolled {
   flex: 1;
 }
 
+.portfolio-card-context {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.portfolio-card-context p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.portfolio-card-context strong {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
 .portfolio-card-features {
   list-style: none;
   margin-bottom: 20px;
