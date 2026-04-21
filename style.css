@@ -394,7 +394,8 @@ main {
 #cases { order: 3; }
 #process { order: 4; }
 #portfolio { order: 5; }
-#contact { order: 6; }
+#testimonials { order: 6; }
+#contact { order: 7; }
 
 .section {
   max-width: var(--max-width);
