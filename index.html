@@ -835,6 +835,9 @@
             if (innerSpan) {
               innerSpan.textContent = text;
             }
+          } else if (el.classList.contains('testimonial-text')) {
+            // Special handling for testimonial text - replace entire content
+            el.textContent = text;
           } else if (el.children.length > 0) {
             // If child elements have their own translations, do not overwrite parent text nodes.
             if (el.querySelector('[data-lang-ru]')) {
