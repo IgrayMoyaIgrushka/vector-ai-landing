@@ -3,6 +3,10 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+// OpenAI API config
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -157,6 +161,71 @@ ${hasPhoto ? '📎 Фото прикреплено (проверьте Telegram)
     }
   } catch (error) {
     console.error('Server error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Внутренняя ошибка сервера'
+    });
+  }
+});
+
+// Endpoint для чата с ИИ-агентом
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message, history = [] } = req.body;
+
+    if (!message) {
+      return res.status(400).json({
+        success: false,
+        error: 'Сообщение обязательно'
+      });
+    }
+
+    // Формируем сообщения для OpenAI
+    const systemPrompt = `Ты — ИИ-агент компании Vector AI, эксперт по автоматизации бизнеса с помощью AI-агентов и Telegram-ботов.
+Твоя задача:
+- Консультировать потенциальных клиентов по возможностям автоматизации
+- Помогать определить, какие процессы можно автоматизировать
+- Отвечать на вопросы о технологиях, сроках и стоимости
+- Быть дружелюбным, профессиональным и полезным
+
+Отвечай кратко (2-4 предложения), по делу, на языке пользователя.`;
+
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      ...history.slice(-10), // Последние 10 сообщений истории
+      { role: 'user', content: message }
+    ];
+
+    const response = await fetch(OPENAI_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: messages,
+        max_tokens: 500,
+        temperature: 0.7
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.choices && data.choices[0]) {
+      res.json({
+        success: true,
+        message: data.choices[0].message.content
+      });
+    } else {
+      console.error('OpenAI error:', data);
+      res.status(500).json({
+        success: false,
+        error: data.error?.message || 'Ошибка получения ответа от ИИ'
+      });
+    }
+  } catch (error) {
+    console.error('Chat error:', error);
     res.status(500).json({
       success: false,
       error: 'Внутренняя ошибка сервера'
