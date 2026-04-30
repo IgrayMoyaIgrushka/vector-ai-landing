@@ -1,5 +1,41 @@
 # История изменений проекта Vector AI Landing
 
+## 2026-04-30 — Интеграция GigaChat вместо OpenAI
+
+### Что сделано:
+- **Изменена интеграция с OpenAI на GigaChat (Sberbank):**
+  - Добавлена функция `getGigachatToken()` для получения токена авторизации
+  - Кэширование токена (25 минут) для оптимизации запросов
+  - Изменён endpoint на `https://gigachat.devices.sberbank.ru/api/v2/chat/completions`
+  - Модель изменена на `GigaChat`
+
+- **Обновлены переменные окружения:**
+  - `GIGACHAT_CLIENT_ID` — ID клиента GigaChat API
+  - `GIGACHAT_CLIENT_SECRET` — Секрет клиента GigaChat API
+
+- **Аутентификация:**
+  - Используется OAuth 2.0 Client Credentials Flow
+  - Токен получается через `https://ngw.devices.sberbank.ru:9443/api/v2/oauth`
+  - Заголовок: `Authorization: Basic base64(clientId:clientSecret)`
+
+### Файлы:
+- `server.js`: изменён endpoint /api/chat для работы с GigaChat
+
+### Технические детали:
+- GigaChat API v2
+- Модель: GigaChat (аналог GPT-4)
+- OAuth 2.0 аутентификация
+- Автоматическое обновление токена при истечении
+
+### Для активации:
+Добавить переменные окружения на Render:
+```
+GIGACHAT_CLIENT_ID=your_client_id
+GIGACHAT_CLIENT_SECRET=your_client_secret
+```
+
+---
+
 ## 2026-04-30 — Добавлен виджет чата с ИИ-агентом (OpenAI)
 
 ### Что сделано:

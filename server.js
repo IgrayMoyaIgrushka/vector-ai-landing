@@ -3,9 +3,52 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-// OpenAI API config
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+// GigaChat API config (Sberbank)
+const GIGACHAT_CLIENT_ID = process.env.GIGACHAT_CLIENT_ID;
+const GIGACHAT_CLIENT_SECRET = process.env.GIGACHAT_CLIENT_SECRET;
+const GIGACHAT_API_URL = 'https://gigachat.devices.sberbank.ru/api/v2/chat/completions';
+const GIGACHAT_AUTH_URL = 'https://ngw.devices.sberbank.ru:9443/api/v2/oauth';
+
+// Кэш для токена авторизации GigaChat
+let gigachatAccessToken = null;
+let gigachatTokenExpiry = null;
+
+// Функция получения токена авторизации GigaChat
+async function getGigachatToken() {
+  // Если токен есть и не истёк, возвращаем его
+  if (gigachatAccessToken && gigachatTokenExpiry && new Date() < gigachatTokenExpiry) {
+    return gigachatAccessToken;
+  }
+
+  try {
+    const authString = Buffer.from(`${GIGACHAT_CLIENT_ID}:${GIGACHAT_CLIENT_SECRET}`).toString('base64');
+    
+    const response = await fetch(GIGACHAT_AUTH_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${authString}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'RqUID': require('crypto').randomUUID()
+      },
+      body: 'scope=GIGACHAT_API_PERS'
+    });
+
+    const data = await response.json();
+    
+    if (data.access_token) {
+      gigachatAccessToken = data.access_token;
+      // Токен действителен 30 минут, устанавливаем expiry на 25 минут для запаса
+      gigachatTokenExpiry = new Date(Date.now() + 25 * 60 * 1000);
+      console.log('GigaChat: получен новый токен авторизации');
+      return gigachatAccessToken;
+    } else {
+      throw new Error('GigaChat: не удалось получить токен');
+    }
+  } catch (error) {
+    console.error('GigaChat auth error:', error);
+    throw error;
+  }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -168,7 +211,7 @@ ${hasPhoto ? '📎 Фото прикреплено (проверьте Telegram)
   }
 });
 
-// Endpoint для чата с ИИ-агентом
+// Endpoint для чата с ИИ-агентом (GigaChat)
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, history = [] } = req.body;
@@ -180,7 +223,7 @@ app.post('/api/chat', async (req, res) => {
       });
     }
 
-    // Формируем сообщения для OpenAI
+    // Формируем сообщения для GigaChat
     const systemPrompt = `Ты — ИИ-агент компании Vector AI, эксперт по автоматизации бизнеса с помощью AI-агентов и Telegram-ботов.
 Твоя задача:
 - Консультировать потенциальных клиентов по возможностям автоматизации
@@ -196,14 +239,17 @@ app.post('/api/chat', async (req, res) => {
       { role: 'user', content: message }
     ];
 
-    const response = await fetch(OPENAI_API_URL, {
+    // Получаем токен авторизации
+    const accessToken = await getGigachatToken();
+
+    const response = await fetch(GIGACHAT_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENAI_API_KEY}`
+        'Authorization': `Bearer ${accessToken}`
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'GigaChat',
         messages: messages,
         max_tokens: 500,
         temperature: 0.7
@@ -212,23 +258,23 @@ app.post('/api/chat', async (req, res) => {
 
     const data = await response.json();
 
-    if (data.choices && data.choices[0]) {
+    if (data.choices && data.choices[0] && data.choices[0].message) {
       res.json({
         success: true,
         message: data.choices[0].message.content
       });
     } else {
-      console.error('OpenAI error:', data);
+      console.error('GigaChat error:', data);
       res.status(500).json({
         success: false,
-        error: data.error?.message || 'Ошибка получения ответа от ИИ'
+        error: data.description || data.error?.message || 'Ошибка получения ответа от ИИ'
       });
     }
   } catch (error) {
     console.error('Chat error:', error);
     res.status(500).json({
       success: false,
-      error: 'Внутренняя ошибка сервера'
+      error: error.message || 'Внутренняя ошибка сервера'
     });
   }
 });
