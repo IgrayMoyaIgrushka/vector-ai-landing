@@ -3195,3 +3195,11 @@ textarea:focus-visible {
     max-height: calc(100vh - 150px);
   }
 }
+
+/* ========================================
+   CHAT WIDGET DISABLED
+   Временно отключено из-за ошибки 403 GigaChat API
+   ======================================== */
+.chat-widget {
+  display: none !important;
+}
