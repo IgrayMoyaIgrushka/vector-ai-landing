@@ -1,5 +1,40 @@
 # История изменений проекта Vector AI Landing
 
+## 2026-05-02 — Очистка проекта от лишних файлов
+
+### Что сделано:
+- **Удалены ненужные файлы (бэкапы и старые версии):**
+  - `index-backup.html` — бэкап index.html
+  - `index.html.backup` — бэкап index.html
+  - `index-utf8.html` — старая версия кодировки
+  - `index.min.html` — минифицированная версия
+  - `index.v0-blue-original.html` — оригинальная версия
+  - `index.v1.0-initial.html` — начальная версия
+  - `earlycode.txt` — ранний код
+  - `.session-notes.md` — заметки сессии
+  - `~:.continue:config.json` — конфиг IDE
+
+- **Оставлены только необходимые файлы проекта:**
+  - `index.html` — основная страница лендинга
+  - `style.css` — стили
+  - `server.js` — backend сервер
+  - `.env` — переменные окружения
+  - `package.json` / `package-lock.json` — зависимости Node.js
+  - `CHANGELOG.md` — история изменений
+  - `README.md` — документация
+  - `CONTEXT.md` — контекст проекта
+  - `CONVERSATION.md` — история разговора
+  - `DEPLOY.md` — инструкция по деплою
+  - `render.yaml` — конфигурация Render
+  - `.gitignore` — игнорирование файлов Git
+
+### Результат:
+- Проект стал чище и понятнее
+- Убраны дублирующиеся файлы
+- Уменьшен размер репозитория
+
+---
+
 ## 2026-04-30 — Интеграция GigaChat вместо OpenAI
 
 ### Что сделано:
