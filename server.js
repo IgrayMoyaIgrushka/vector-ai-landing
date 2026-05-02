@@ -9,6 +9,12 @@ const GIGACHAT_CLIENT_SECRET = process.env.GIGACHAT_CLIENT_SECRET;
 const GIGACHAT_API_URL = 'https://gigachat.devices.sberbank.ru/api/v2/chat/completions';
 const GIGACHAT_AUTH_URL = 'https://ngw.devices.sberbank.ru:9443/api/v2/oauth';
 
+// HTTPS Agent для обхода self-signed сертификата Sberbank
+const https = require('https');
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false // Sberbank использует self-signed сертификаты
+});
+
 // Кэш для токена авторизации GigaChat
 let gigachatAccessToken = null;
 let gigachatTokenExpiry = null;
@@ -30,7 +36,8 @@ async function getGigachatToken() {
         'Content-Type': 'application/x-www-form-urlencoded',
         'RqUID': require('crypto').randomUUID()
       },
-      body: 'scope=GIGACHAT_API_PERS'
+      body: 'scope=GIGACHAT_API_PERS',
+      agent: httpsAgent
     });
 
     const data = await response.json();
@@ -253,7 +260,8 @@ app.post('/api/chat', async (req, res) => {
         messages: messages,
         max_tokens: 500,
         temperature: 0.7
-      })
+      }),
+      agent: httpsAgent
     });
 
     const data = await response.json();
