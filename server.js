@@ -27,6 +27,8 @@ async function getGigachatToken() {
   try {
     const authString = Buffer.from(`${GIGACHAT_CLIENT_ID}:${GIGACHAT_CLIENT_SECRET}`).toString('base64');
     
+    console.log('GigaChat: запрос токена авторизации...');
+    
     const response = await fetch(GIGACHAT_AUTH_URL, {
       method: 'POST',
       headers: {
@@ -37,7 +39,17 @@ async function getGigachatToken() {
       body: 'scope=GIGACHAT_API_PERS'
     });
 
-    const data = await response.json();
+    console.log('GigaChat auth status:', response.status);
+    
+    const responseBody = await response.text();
+    console.log('GigaChat auth response:', responseBody.substring(0, 500));
+    
+    // Проверяем, что это JSON
+    if (!responseBody.startsWith('{')) {
+      throw new Error(`GigaChat: получен HTML вместо JSON (статус ${response.status})`);
+    }
+    
+    const data = JSON.parse(responseBody);
     
     if (data.access_token) {
       gigachatAccessToken = data.access_token;
@@ -46,7 +58,7 @@ async function getGigachatToken() {
       console.log('GigaChat: получен новый токен авторизации');
       return gigachatAccessToken;
     } else {
-      throw new Error('GigaChat: не удалось получить токен');
+      throw new Error('GigaChat: не удалось получить токен: ' + JSON.stringify(data));
     }
   } catch (error) {
     console.error('GigaChat auth error:', error);
@@ -246,6 +258,8 @@ app.post('/api/chat', async (req, res) => {
     // Получаем токен авторизации
     const accessToken = await getGigachatToken();
 
+    console.log('GigaChat: запрос к chat completions...');
+
     const response = await fetch(GIGACHAT_API_URL, {
       method: 'POST',
       headers: {
@@ -260,7 +274,17 @@ app.post('/api/chat', async (req, res) => {
       })
     });
 
-    const data = await response.json();
+    console.log('GigaChat API status:', response.status);
+
+    const responseBody = await response.text();
+    console.log('GigaChat API response:', responseBody.substring(0, 500));
+
+    // Проверяем, что это JSON
+    if (!responseBody.startsWith('{')) {
+      throw new Error(`GigaChat: получен HTML вместо JSON (статус ${response.status})`);
+    }
+
+    const data = JSON.parse(responseBody);
 
     if (data.choices && data.choices[0] && data.choices[0].message) {
       res.json({
